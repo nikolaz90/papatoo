@@ -1,12 +1,13 @@
-.navbar-lewagon {
+.papatoo-navbar {
+  @include flex-row();
+  align-items: center;
   justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  border-bottom: 1px solid black;
+  a {
+    transition: all ease-in-out 0.3s;
+    color: $mid-green-papatoo;
+    &:hover {
+      color: $dark-green-papatoo;
+    }
+  }
 }

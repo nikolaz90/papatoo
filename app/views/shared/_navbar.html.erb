@@ -1,3 +1,15 @@
-<nav>
-  <h1>navbar</h1>
+<nav class="papatoo-navbar">
+  <%= link_to root_path do %>
+    <h1>Papatoo</h1>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <div class="nav-links-container">
+      <%= link_to 'logout', new_user_session_path %>
+    </div>
+  <% else %>
+    <div class="nav-links-container">
+      <%= link_to 'login', new_user_session_path %>
+    </div>
+  <% end %>
 </nav>
