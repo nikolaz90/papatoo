@@ -1,1 +1,5 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# papatoo
+Is a information blog for parents, mainly geared towards fathers.
+#### The objectives are:
+- bring non biased / neutral information to users on parenthood
+- provide a comunity to new (ish) parents
