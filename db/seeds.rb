@@ -6,8 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+def seed(file)
+  puts "carrying out seed of #{file}"
+  load Rails.root.join("db", "seeds", "#{file}.rb")
+end
+
 puts 'clearing db...'
+Article.destroy_all
 User.destroy_all
 
-puts 'creating user...'
-User.create!(email: "123@dev.com", password: "papatoo")
+seed("users")
+seed("articles")
