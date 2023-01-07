@@ -60,5 +60,17 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # jason swetts version
   # Capybara.default_driver = :selenium_chrome
+
+  # Kitt code for minitest... doesnt resolve selenium bug.
+  # ENV['RAILS_ENV'] ||= 'test'
+
+  # Capybara.register_driver :headless_chrome do |app|
+  #   options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu window-size=1400,900])
+  #   Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+  # end
+  # Capybara.save_path = Rails.root.join('tmp/capybara')
+  # Capybara.javascript_driver = :headless_chrome
 end

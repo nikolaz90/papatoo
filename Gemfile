@@ -57,11 +57,11 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "dotenv-rails"
-  gem "rspec"
+  # gem "rspec"
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem "capybara"
-  gem "selenium-webdriver"
+  # gem "selenium-webdriver"
   gem "webdrivers"
   gem 'faker'
 end
