@@ -61,7 +61,9 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
-  # jason swetts version
+
+  # attempts at resolving system test with rspec in WSL2. no luck....
+  # jason swetts version -- I believe this works only on mac OS
   # Capybara.default_driver = :selenium_chrome
 
   # Kitt code for minitest... doesnt resolve selenium bug.

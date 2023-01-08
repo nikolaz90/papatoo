@@ -2,7 +2,7 @@ require 'rails_helper'
 
 ## issues with selenium to be resolved... causing errors
 
-RSpec.describe 'Welcome to papatoo', type: :system do
+RSpec.describe 'Welcome to papatoo', type: :feature do
   describe 'index page' do
     it 'shows the right content' do
       visit(root_path)
