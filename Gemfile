@@ -63,6 +63,7 @@ group :development, :test do
   # gem "selenium-webdriver"
   gem "webdrivers"
   gem 'faker'
+  gem 'pry-byebug'
 end
 
 group :development do

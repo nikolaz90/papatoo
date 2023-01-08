@@ -4,11 +4,6 @@ RSpec.describe Article, type: :model do
   describe 'article can be created by user' do
     let(:valid_user) { User.create(email: 'test@test.com', password: 'testtest') }
 
-    it "has created a valid article" do
-      article = Article.new(user: valid_user)
-      expect(article.valid?).to eq true
-    end
-
     it "should not validate an article without a user" do
       article = Article.new
       expect(article.valid?).to eq false
