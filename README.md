@@ -6,8 +6,8 @@ Is a information blog for parents
 
 ## Run RSpec tests
 - run all tests with:
-  rspec spec
+    `rspec spec`
 - run individual tests with:
-  rspec spec/<path-of-spec>
-for example:
-  rspec spec/models_specs
+    `rspec spec/`
+- for example:
+    `rspec spec/models_specs`
