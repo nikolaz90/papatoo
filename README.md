@@ -8,6 +8,6 @@ Is a information blog for parents
 - run all tests with:
     `rspec spec`
 - run individual tests with:
-    `rspec spec/`
+    `rspec spec/<path_for_spec>`
 - for example:
     `rspec spec/models_specs`
