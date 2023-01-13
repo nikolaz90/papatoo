@@ -9,5 +9,5 @@ Is a information blog for parents
     `rspec spec`
 - run individual tests with:
     `rspec spec/<path_for_spec>`
-- for example:
+  for example:
     `rspec spec/models_specs`
