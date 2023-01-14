@@ -33,14 +33,9 @@ RSpec.describe Comment, type: :model do
     end
 
     it 'if article is deleted, associated comments should be deleted' do
-      article_two = Article.new(user: valid_user, title: "the life of brian.")
-      article_two.save
-      comment = Comment.new(user: valid_user, article: article_two, content: 'Hmmm, not sure!')
-      comment.save
-      article_two.destroy
-      expect(Article.find(article_two.id)).to eq nil
-      expect(comment).to eq "ActiveRecord::RecordNotFound:
-      Couldn't find Article with 'id'=38"
+      article_two = Article.create(user: valid_user, title: "the life of brian.")
+      comment = Comment.create(user: valid_user, article: article_two, content: 'Hmmm, not sure!')
+      expect { article_two.destroy }.to change { Comment.count }.by(-1)
     end
   end
 end
