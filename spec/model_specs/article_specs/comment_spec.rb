@@ -21,5 +21,26 @@ RSpec.describe Comment, type: :model do
       expect(comment.user.email).to eq "test@test.com"
       expect(comment.article.title).to eq "the life of pi was great! this is why."
     end
+
+    it 'user should be able to access the comments that they wrote and the articles associated' do
+      user = User.new(email: 'test@user.com', password: '123456')
+      user.save
+      article_one = Article.new(user: user, title: 'article 1')
+      article_one.save
+      comment = Comment.new(user: valid_user, article: article_one, content: 'Fantastic insight')
+      comment.save
+      expect(valid_user.comments.first).to eq comment
+    end
+
+    it 'if article is deleted, associated comments should be deleted' do
+      article_two = Article.new(user: valid_user, title: "the life of brian.")
+      article_two.save
+      comment = Comment.new(user: valid_user, article: article_two, content: 'Hmmm, not sure!')
+      comment.save
+      article_two.destroy
+      expect(Article.find(article_two.id)).to eq nil
+      expect(comment).to eq "ActiveRecord::RecordNotFound:
+      Couldn't find Article with 'id'=38"
+    end
   end
 end

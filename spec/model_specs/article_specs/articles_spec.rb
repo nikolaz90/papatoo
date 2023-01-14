@@ -19,5 +19,12 @@ RSpec.describe Article, type: :model do
       expect(article.valid?).to eq true
       expect(article.status).to eq 'draft'
     end
+
+    it 'user should have access to their own articles' do
+      article_one = Article.new(user: valid_user, title: 'article 1')
+      article_one.save
+      expect(valid_user.articles.length).to eq 1
+      expect(valid_user.articles.last.title).to eq Article.last.title
+    end
   end
 end
