@@ -23,12 +23,9 @@ RSpec.describe Comment, type: :model do
     end
 
     it 'user should be able to access the comments that they wrote and the articles associated' do
-      user = User.new(email: 'test@user.com', password: '123456')
-      user.save
-      article_one = Article.new(user: user, title: 'article 1')
-      article_one.save
-      comment = Comment.new(user: valid_user, article: article_one, content: 'Fantastic insight')
-      comment.save
+      user = User.create(email: 'test@user.com', password: '123456')
+      article_one = Article.create(user: user, title: 'article 1')
+      comment = Comment.create(user: valid_user, article: article_one, content: 'Fantastic insight')
       expect(valid_user.comments.first).to eq comment
     end
 
