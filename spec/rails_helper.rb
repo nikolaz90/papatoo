@@ -61,6 +61,8 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  # necessary for log in with Factory bot? >> according to https://www.codewithjason.com/logging-user-capybara-feature-specs/
+  config.include Warden::Test::Helpers
 
   # attempts at resolving system test with rspec in WSL2. no luck....
   # jason swetts version -- I believe this works only on mac OS

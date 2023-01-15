@@ -4,3 +4,7 @@
 <h2>Articles#index</h2>
 
 <h3>Here are all articles</h3>
+
+<% @articles.each do |item| %>
+  <p><%= item.title %></p>
+<% end %>
