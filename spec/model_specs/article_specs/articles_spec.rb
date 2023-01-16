@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   describe 'article can be created by user' do
-    let(:valid_user) { User.create(email: 'test@test.com', password: 'testtest') }
+    let(:valid_user) { User.create(email: 'test@test.com', password: 'testtest', username: 'test_') }
 
     it "should not validate an article without a user" do
       article = Article.new

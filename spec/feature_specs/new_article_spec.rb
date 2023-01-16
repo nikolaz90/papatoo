@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Create a new article', type: :feature do
   describe 'articles pages' do
-    let(:user) { User.create(email: "article@test.com", password: "123456") }
+    let(:user) { User.create(email: "article@test.com", password: "123456", username: "aloha_guy") }
 
     it 'should not allow user to go to write new article page' do
       visit(new_article_path)

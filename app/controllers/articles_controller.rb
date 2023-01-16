@@ -2,14 +2,17 @@ class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @articles = Article.all
+    @articles = policy_scope(Article)
   end
 
   def my_index
+    @articles = policy_scope(Article).where(user: current_user)
+    authorize @articles
   end
 
   def new
     @article = Article.new
+    authorize @article
   end
 
   def create
@@ -20,6 +23,7 @@ class ArticlesController < ApplicationController
     else
       render :new
     end
+    authorize @article
   end
 
   private

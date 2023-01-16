@@ -2,3 +2,7 @@
 <%= link_to "write", new_article_path %>
 
 <h2>My articles index</h2>
+
+<% @articles.each do |item| %>
+  <p><%= item.title %></p>
+<% end %>

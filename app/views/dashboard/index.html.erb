@@ -1,4 +1,6 @@
-<h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
+<h1>Dashboard</h1>
+<p>Hi <%= current_user.username %></p>
 
 <%= link_to 'my articles', my_articles_path %>
+<br>
+<%= link_to 'account settings', edit_user_registration_path %>
