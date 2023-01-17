@@ -26,5 +26,11 @@ RSpec.describe Article, type: :model do
       expect(valid_user.articles.length).to eq 1
       expect(valid_user.articles.last.title).to eq Article.last.title
     end
+
+    it 'if user deletes account, all articles written by user are deleted' do
+      random_user = User.create(email: "rand@o.com", password: "random_person", username: "rand")
+      article_one = Article.create(user: random_user, title: 'article 2')
+      expect { random_user.destroy }.to change { Article.count }.by(-1)
+    end
   end
 end
