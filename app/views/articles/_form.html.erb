@@ -1,0 +1,7 @@
+<%= simple_form_for article do |form| %>
+  <%= form.input :title %>
+  <%= form.input :category %>
+  <%= form.input :content %>
+  <%= form.input :accepts_comments, label: "allow comments for this article" %>
+  <%= form.submit 'save' %>
+<% end %>

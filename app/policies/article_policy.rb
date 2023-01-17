@@ -15,8 +15,12 @@ class ArticlePolicy < ApplicationPolicy
     record.user == user
   end
 
+  def update?
+    edit?
+  end
+
   def destroy?
-    record.user == user
+    edit?
   end
 
   class Scope < Scope

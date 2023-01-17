@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: %i[index]
   # articles
-  resources :articles, only: %i[index show new create edit destroy] do
+  resources :articles, only: %i[index show new create edit update destroy] do
     resources :comments, only: %i[create]
   end
   get "my_articles", to: "articles#my_index"

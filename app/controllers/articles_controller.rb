@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_article, only: [:show, :edit, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
     @articles = policy_scope(Article).includes(:user)
@@ -36,6 +36,12 @@ class ArticlesController < ApplicationController
     authorize @article
   end
 
+  def update
+    authorize @article
+    @article.update(article_params)
+    redirect_to article_path(@article)
+  end
+
   def destroy
     authorize @article
     @article.destroy
@@ -49,6 +55,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :category, :content)
+    params.require(:article).permit(:title, :category, :content, :accepts_comments)
   end
 end
