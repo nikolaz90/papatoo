@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     authorize @article
+    @comment = Comment.new
   end
 
   def my_index

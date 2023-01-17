@@ -5,4 +5,5 @@ class Article < ApplicationRecord
 
   validates :title, presence: true
   attribute :status, :string, default: "draft"
+  attribute :accepts_comments, :boolean, default: true
 end

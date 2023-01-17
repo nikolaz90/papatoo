@@ -1,0 +1,5 @@
+<h3>Leave a comment</h3>
+<%= simple_form_for [@article, @comment] do |form| %>
+  <%= form.input :content %>
+  <%= form.submit 'comment' %>
+<% end %>

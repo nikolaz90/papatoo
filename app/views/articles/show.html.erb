@@ -9,3 +9,7 @@
 <% else %>
   <p>Thanks for reading.</p>
 <% end %>
+<% if @article.accepts_comments %>
+  <%= render partial: 'comments/index', locals: { comments: @article.comments } %>
+  <%= render 'comments/new' %>
+<% end %>
