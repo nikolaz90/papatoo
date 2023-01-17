@@ -6,5 +6,7 @@
 <h3>Here are all articles</h3>
 
 <% @articles.each do |item| %>
-  <p><%= item.title %></p>
+  <%= link_to article_path(item) do %>
+    <p><%= item.title %> - <small>by: <%= item.user == current_user ? "you wrote this article!" : item.user.username %></small></p>
+  <% end %>
 <% end %>

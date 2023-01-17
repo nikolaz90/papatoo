@@ -1,0 +1,11 @@
+<h2><%= @article.title %></h2>
+<p><%= @article.category if @article.category.present? %></p>
+<p><%= @article.updated_at %></p>
+<p><%= @article.content %></p>
+
+<% if policy(@article).destroy? %>
+  <%= link_to 'edit', edit_article_path(@article) %>
+  <%= link_to 'delete', article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Delete #{@article.title}?" } %>
+<% else %>
+  <p>Thanks for reading.</p>
+<% end %>

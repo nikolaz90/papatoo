@@ -4,5 +4,7 @@
 <h2>My articles index</h2>
 
 <% @articles.each do |item| %>
-  <p><%= item.title %></p>
+  <%= link_to article_path(item) do %>
+    <p><%= item.title %></p>
+  <% end %>
 <% end %>

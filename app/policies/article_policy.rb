@@ -1,10 +1,22 @@
 class ArticlePolicy < ApplicationPolicy
+  def show?
+    true
+  end
+
   def my_index?
     true
   end
 
   def create?
     true
+  end
+
+  def edit?
+    true
+  end
+
+  def destroy?
+    record.user == user
   end
 
   class Scope < Scope

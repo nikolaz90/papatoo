@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: %i[index]
   # articles
-  resources :articles, only: %i[index new create]
+  resources :articles, only: %i[index show new create edit destroy]
   get "my_articles", to: "articles#my_index"
 
   root to: "pages#home"
