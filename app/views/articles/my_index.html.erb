@@ -2,6 +2,7 @@
 <%= link_to "write", new_article_path %>
 
 <h2>My articles index</h2>
+<p><small><%= @articles.any? ? "You have #{@articles.length} articles" : "You haven't written any articles" %></small></p>
 
 <% @articles.each do |item| %>
   <%= link_to article_path(item) do %>
