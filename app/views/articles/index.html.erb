@@ -1,9 +1,19 @@
-<%= link_to "back", :back %>
-<%= link_to "write", new_article_path %>
+<div class='banner-title-container'>
+  <div class='small-index-banner-container'
+      style="background-image: linear-gradient(45deg, rgb(0, 0, 0, 0.1), rgb(0, 0, 0, 0.2)),
+              url('https://cdn.pixabay.com/photo/2019/06/06/13/02/office-scene-4255945_1280.png')">
+  </div>
 
-<h2>Articles#index</h2>
+  <div class='article-index-h2-container'>
+    <h2>Users Write Awesome Articles Write One Too</h2>
+    <p>
+      Read up on what users are thinking. Tips and insights are always welcome.
+      Join in and write an article.
+    </p>
+  </div>
+  <%= link_to "write an article", new_article_path %>
+</div>
 
-<h3>Here are all articles</h3>
 
 <% @articles.each do |item| %>
   <%= link_to article_path(item) do %>

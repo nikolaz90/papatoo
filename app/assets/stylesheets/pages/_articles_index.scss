@@ -1,0 +1,46 @@
+.banner-title-container {
+  width: 80vw;
+  margin: 0 auto;
+  a {
+    background-color: $yellow;
+    padding: 1rem;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+      box-shadow: 3px 3px 0px black
+    }
+  }
+}
+
+.article-index-h2-container {
+  @include flex-row();
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 38rem;
+  justify-content: space-between;
+  h2 {
+    width: 23rem;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  p {
+    width: 13rem;
+  }
+}
+
+@media (max-width:720px) {
+  .article-index-h2-container{
+    h2 {
+      width: 100%;
+    }
+    p {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width:500px) {
+  .article-index-h2-container{
+    text-align: center;
+  }
+}
