@@ -1,13 +1,12 @@
+.article-index-top-section {
+  @include flex-row();
+  justify-content: space-evenly;
+}
+
 .banner-title-container {
-  width: 80vw;
-  margin: 0 auto;
+  width: 60vw;
   a {
-    background-color: $yellow;
-    padding: 1rem;
-    transition: all ease-in-out 0.3s;
-    &:hover {
-      box-shadow: 3px 3px 0px black
-    }
+    @include cta-btn();
   }
 }
 

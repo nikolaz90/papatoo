@@ -1,0 +1,13 @@
+@mixin button-basic {
+  padding: 1rem;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 3px 3px 0px black;
+  &:hover {
+    box-shadow: 1px 1px 0px black;
+  }
+}
+
+@mixin cta-btn {
+  @include button-basic();
+  background-color: $yellow;
+}
