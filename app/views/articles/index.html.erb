@@ -6,7 +6,7 @@
     </div>
 
     <div class='article-index-h2-container'>
-      <h2>Users Write Awesome Articles Write One Too</h2>
+      <h2>Users Write Awesome Articles: Write One Too</h2>
       <p>
         Read up on what users are thinking. Tips and insights are always welcome.
         Join in and write an article.
@@ -28,10 +28,10 @@
 <section class="article-index-second-section">
   <% @articles.each_with_index do |item, index| %>
     <%= link_to article_path(item), class:"article-index-card" do %>
+      <h5 class="article-index-card-number" style="background: rgb(<%= rand(50..255) %>,<%= rand(50..255) %>,<%= rand(50..255) %>)"><%= index + 1 %></h5>
       <h5><%= item.title %></h5>
       <p><small>by: <%= item.user == current_user ? "you wrote this article!" : item.user.username %></small></p>
-      <p><%= item.content.truncate(25) %></p>
-      <h5><%= index + 1 %></h5>
+      <p><%= item.content.truncate(50) %></p>
     <% end %>
   <% end %>
 </section>
