@@ -15,13 +15,23 @@
     <%= link_to "write an article", new_article_path %>
   </div>
   <div class="top-content-container">
-    <h3>most liked articles</h3>
+    <h3>most recent articles</h3>
+    <% @articles.first(3).each do |item| %>
+      <%= link_to article_path(item) do %>
+        <h5><%= item.title %></h5>
+        <p><small><%= item.content.truncate(25) %></small></p>
+      <% end %>
+    <% end %>
   </div>
 </section>
 
-
-<% @articles.each do |item| %>
-  <%= link_to article_path(item) do %>
-    <p><%= item.title %> - <small>by: <%= item.user == current_user ? "you wrote this article!" : item.user.username %></small></p>
+<section class="article-index-second-section">
+  <% @articles.each_with_index do |item, index| %>
+    <%= link_to article_path(item), class:"article-index-card" do %>
+      <h5><%= item.title %></h5>
+      <p><small>by: <%= item.user == current_user ? "you wrote this article!" : item.user.username %></small></p>
+      <p><%= item.content.truncate(25) %></p>
+      <h5><%= index + 1 %></h5>
+    <% end %>
   <% end %>
-<% end %>
+</section>

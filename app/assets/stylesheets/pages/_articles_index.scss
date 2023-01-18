@@ -3,8 +3,19 @@
   justify-content: space-evenly;
 }
 
+@media (max-width:1000px) {
+  .article-index-top-section {
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    margin: 0 auto;
+  }
+}
+
 .banner-title-container {
-  width: 60vw;
+  div {
+    margin: 0 auto;
+  }
   a {
     @include cta-btn();
   }
@@ -42,4 +53,12 @@
   .article-index-h2-container{
     text-align: center;
   }
+}
+
+.article-index-second-section {
+  @include flex-row();
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
 }

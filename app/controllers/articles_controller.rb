@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = policy_scope(Article).includes(:user)
+    @articles = policy_scope(Article).includes(:user).reverse
   end
 
   def show
