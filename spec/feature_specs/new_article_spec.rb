@@ -23,7 +23,7 @@ RSpec.describe 'Create a new article', type: :feature do
       fill_in 'Title', with: 'This is an eyecatching title'
       fill_in 'Content', with: 'This is another rspec test article.'
       click_on 'save'
-      expect(page).to have_content('articles')
+      expect(page).to have_content('My articles')
       expect(page).to have_content('This is an eyecatching title')
     end
   end
