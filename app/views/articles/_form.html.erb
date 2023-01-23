@@ -3,5 +3,6 @@
   <%= form.input :category %>
   <%= form.input :content %>
   <%= form.input :accepts_comments, label: "allow comments for this article" %>
+  <%= form.input :status, collection: ["draft", "ask to be published"] %>
   <%= form.submit 'save' %>
 <% end %>

@@ -6,6 +6,6 @@
 
 <% @articles.each do |item| %>
   <%= link_to article_path(item) do %>
-    <p><%= item.title %></p>
+    <p><%= item.title %> - status : <%= item.status %></p>
   <% end %>
 <% end %>
