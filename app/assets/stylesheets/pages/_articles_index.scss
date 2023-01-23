@@ -23,7 +23,7 @@
 
 .article-index-h2-container {
   @include flex-row();
-  margin-top: 1rem;
+  padding-top: 1rem;
   flex-wrap: wrap;
   width: 100%;
   max-width: 38rem;
