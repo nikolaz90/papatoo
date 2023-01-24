@@ -1,6 +1,6 @@
 class ArticlePolicy < ApplicationPolicy
   def show?
-    true
+    record.status == "published" || edit? || user.admin
   end
 
   def my_index?

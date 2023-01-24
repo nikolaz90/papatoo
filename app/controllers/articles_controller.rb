@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :user_can_access_article, only: [:show]
 
   def index
     @articles = policy_scope(Article).where(status: "published").includes(:user).reverse
@@ -49,6 +50,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def user_can_access_article
+    redirect_to articles_path, notice: "unauthorized action!" if @article.status != "published" && @article.user != current_user && !current_user.admin
+  end
 
   def set_article
     @article = Article.find(params[:id])
