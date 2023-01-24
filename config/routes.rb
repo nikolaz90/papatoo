@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create]
   end
   get "my_articles", to: "articles#my_index"
+  get "articles_for_validation", to: "admins#articles_for_validation"
 
   # comments
 
