@@ -1,4 +1,4 @@
 <h2>Edit <%= @article.title %></h2>
 <p>status : <%= @article.status %></p>
 
-<%= render partial: 'form', locals: { article: @article} %>
+<%= render partial: 'form', locals: { article: @article, status_options: ["draft", "ask to be published"] } %>

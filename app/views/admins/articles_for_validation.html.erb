@@ -1,5 +1,7 @@
 <h2>articles for validation</h2>
 
 <% @articles_for_validation.each do |item|  %>
-  <p><%= item.title %> status : <%= item.status %>, by : <%= item.user.username %></p>
+  <%= link_to article_path(item) do %>
+    <p><%= item.title %> status : <%= item.status %>, by : <%= item.user.username %></p>
+  <% end %>
 <% end %>

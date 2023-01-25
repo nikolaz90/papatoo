@@ -1,10 +1,10 @@
 <h1>Dashboard</h1>
 <p>Hi <%= current_user.username %><%= " : this is an admin account" if current_user.admin %></p>
 
-<%= link_to 'my articles', my_articles_path %>
-<br>
-<%= link_to 'account settings', edit_user_registration_path %>
+<p><%= link_to 'my articles', my_articles_path %></p>
+
+<p><%= link_to 'account settings', edit_user_registration_path %></p>
 
 <% if policy(:admin).articles_for_validation? %>
-  <%= link_to 'articles for validation', articles_for_validation_path %>
+  <p><%= link_to 'articles for validation', articles_for_validation_path %></p>
 <% end %>

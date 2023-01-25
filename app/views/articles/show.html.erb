@@ -13,3 +13,7 @@
   <%= render partial: 'comments/index', locals: { comments: @article.comments } %>
   <%= render 'comments/new' %>
 <% end %>
+
+<% if user_signed_in? && current_user.admin %>
+  <%= render partial: 'form', locals: { article: @article, status_options: ["draft", "ask to be published", "refused", "published"] } %>
+<% end %>

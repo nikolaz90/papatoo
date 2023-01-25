@@ -17,7 +17,7 @@ RSpec.describe 'Create a new article', type: :feature do
       expect(page).to have_content('Write a new article')
     end
 
-    it 'should allow user to create an article and see it in the dashboard page' do
+    it 'should allow user to create an article and see it in the my articles page' do
       login_as(user)
       visit(new_article_path)
       fill_in 'Title', with: 'This is an eyecatching title'

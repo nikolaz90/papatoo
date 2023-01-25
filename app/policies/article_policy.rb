@@ -16,7 +16,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    edit?
+    edit? || user.admin
   end
 
   def destroy?
