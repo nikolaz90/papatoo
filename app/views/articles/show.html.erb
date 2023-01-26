@@ -14,6 +14,6 @@
   <%= render 'comments/new' %>
 <% end %>
 
-<% if user_signed_in? && current_user.admin %>
+<% if user_signed_in? && policy(:admin).articles_for_validation? %>
   <%= render partial: 'form', locals: { article: @article, status_options: ["draft", "ask to be published", "refused", "published"] } %>
 <% end %>
