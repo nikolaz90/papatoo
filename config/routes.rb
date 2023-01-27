@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   # locations
   resources :locations, only: %i[index]
 
+  # games
+  get "games", to: "pages#games"
+
+  resources :spell_this, only: %i[index]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

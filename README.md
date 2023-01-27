@@ -1,8 +1,5 @@
 # papatoo
-Is a information blog for parents
-## The objectives are:
-- bring non biased / neutral information to users on parenthood
-- provide a comunity to new (ish) parents
+Is a personal blog
 
 ## Run RSpec tests
 - tests are split into either model tests and feature tests.
