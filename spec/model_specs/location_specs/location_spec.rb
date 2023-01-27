@@ -19,7 +19,7 @@ RSpec.describe Comment, type: :model do
       expect(location.valid?).to eq false
     end
 
-    it 'should user be able to create a valid location' do
+    it 'user should be able to create a valid location' do
       location = Location.new(user: valid_user, long: 0.00, lat: 0.00, start_time: Time.now + 2.days)
       expect(location.valid?).to eq true
     end
@@ -27,6 +27,11 @@ RSpec.describe Comment, type: :model do
     it 'should be have a default duration of 30' do
       location = Location.new(long: 0.00, lat: 0.00, user: valid_user)
       expect(location.duration).to eq 30
+    end
+
+    it 'user should have access to locations' do
+      location = Location.create(user: valid_user, long: 0.00, lat: 0.00, start_time: Time.now + 2.days)
+      expect(valid_user.locations.first).to eq location
     end
   end
 end
