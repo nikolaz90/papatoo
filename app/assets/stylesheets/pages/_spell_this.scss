@@ -7,21 +7,42 @@
   padding: 1rem;
   border-radius: 1rem;
   background-color: $spell-this-red;
+  .counter-answer-container {
+    @include flex-col();
+    align-items: center;
+    width: 17rem;
+    margin: 0 auto;
+    .counter-level-word-container {
+      @include flex-row();
+      flex-wrap: wrap;
+      justify-content: center;
 
-  .counter-level-word-container {
-    @include flex-row();
-    flex-wrap: wrap;
-    .count-box {
-      padding: 0.3rem;
-      border: 1px solid black;
-      &:nth-child(1) {
-        background-color: skyblue;
+      .count-box {
+        font-weight: bolder;
+        padding: 0.3rem;
+        border: 1px solid black;
+        &:nth-child(1) {
+          border-radius: 1rem 0rem 0rem 0rem;
+          background-color: skyblue;
+        }
+        &:nth-child(2) {
+          background-color: cornsilk;
+        }
+        &:nth-child(3) {
+          border-radius: 0rem 1rem 0rem 0rem;
+          background-color: crimson;
+        }
       }
-      &:nth-child(2) {
-        background-color: cornsilk;
-      }
-      &:nth-child(3) {
-        background-color: crimson;
+    }
+    .spell-answer-form {
+      width: 100%;
+      input[type="text"]{
+        background-color: black;
+        color: white;
+        font-weight: bolder;
+        border-radius: 0rem 0rem 1rem 1rem;
+        width: 100%;
+        text-align: center;
       }
     }
   }
