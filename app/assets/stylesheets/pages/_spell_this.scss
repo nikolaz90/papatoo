@@ -4,6 +4,9 @@
     font-weight: bolder;
     text-shadow: 2px 2px 0px white;
   }
+  .word-to-be-spelt {
+    text-align: center;
+  }
   padding: 1rem;
   border-radius: 1rem;
   background-color: $spell-this-red;
@@ -16,26 +19,30 @@
       @include flex-row();
       flex-wrap: wrap;
       justify-content: center;
-
+      width: 98%;
       .count-box {
         font-weight: bolder;
         padding: 0.3rem;
         border: 1px solid black;
+        text-align: center;
         &:nth-child(1) {
           border-radius: 1rem 0rem 0rem 0rem;
           background-color: skyblue;
+          width: 40%;
         }
         &:nth-child(2) {
           background-color: cornsilk;
+          width: 30%;
         }
         &:nth-child(3) {
           border-radius: 0rem 1rem 0rem 0rem;
           background-color: crimson;
+          width: 30%;
         }
       }
     }
     .spell-answer-form {
-      width: 100%;
+      width: 98%;
       input[type="text"]{
         background-color: black;
         color: white;
@@ -43,6 +50,13 @@
         border-radius: 0rem 0rem 1rem 1rem;
         width: 100%;
         text-align: center;
+        border: 0;
+        transition: all ease-in-out 0.3s;
+        &:focus {
+          border: 0;
+          outline: 0;
+          border-radius: 0rem;
+        }
       }
     }
   }
