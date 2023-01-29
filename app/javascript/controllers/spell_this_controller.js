@@ -52,7 +52,7 @@ export default class extends Controller {
 
   userAnswer(e){
     e.preventDefault()
-    if(e.target.value === this.spellwordTarget.innerText && this.level < 8) {
+    if(e.target.value.toLowerCase() === this.spellwordTarget.innerText.toLowerCase() && this.level < 8) {
       this.setNewWord(this.level)
       this.setEncouragement(this.encouragement[this.randomNumber()])
       this.wordcountTarget.innerText = this.correctWords.length

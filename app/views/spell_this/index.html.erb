@@ -1,7 +1,11 @@
 <%= link_to "<- back", :back %>
 
 <section class="spell-this-section" data-controller="spell-this">
-  <h4 data-spell-this-target="encouragement">Computer says : Can you spell this word? The big word below? </h4>
+  <div class="computer-says-container">
+    <h4><%= GameScore.top_3_scorers_message("spell this") %></h4>
+    --------------
+    <h4 data-spell-this-target="encouragement">Computer says : Can you spell this word? The big word below? </h4>
+  </div>
   <h1 class="word-to-be-spelt" data-spell-this-target="spellword">WORD</h1>
   <h1 class="spell-this-go-btn" data-spell-this-target="goBtn" data-action="click->spell-this#startGame">Go!</h1>
   <section class="counter-answer-container" data-spell-this-target='counterAnswerContainer'>
