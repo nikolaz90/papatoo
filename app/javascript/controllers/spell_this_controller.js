@@ -15,33 +15,46 @@ export default class extends Controller {
     ["apoptosis", "dodecahedron", "excacerbated", "haphazardly", "enthusiastically", "disappointedly", "unmistakably", "ostentatiously", "commonsensical", "knowledgeable"]
   ]
 
+  correctWords = [];
+  level = 0;
+
   connect() {
-    console.log('spell this')
-    console.log(this.spellwordTarget.innerText);
-    this.countDown()
-    this.setNewWord(0)
-    console.log(this.levelTarget.innerText);
-    console.log(this.wordcountTarget.innerText);
+    this.countDown();
+    this.setNewWord(0);
   }
 
   countDown(){
-    this.timerTarget.innerText = 999;
+    this.timerTarget.innerText = 9999;
     let interval = setInterval(() => {
       if(this.timerTarget.innerText>0) {
         this.timerTarget.innerText--
       }else{
-        this.stopGame()
-        clearInterval(interval)
+        this.stopGame();
+        clearInterval(interval);
       }
     }, 1);
   }
 
   setNewWord(level){
-    this.spellwordTarget.innerText = this.library[level][this.randomNumber(8)]
+    this.levelTarget.innerText = level + 1
+    if(this.spellwordTarget.innerText !== "WORD") this.correctWords.push(this.spellwordTarget.innerText);
+    let newWord = this.library[level][this.randomNumber()];
+    if(this.correctWords.includes(newWord)) newWord = this.library[level][this.randomNumber()];
+    this.spellwordTarget.innerText = newWord;
   }
 
-  randomNumber(max){
-    return Math.floor(Math.random() * max);
+  randomNumber(){
+    return Math.floor(Math.random() * 9);
+  }
+
+  userAnswer(e){
+    e.preventDefault()
+    if(e.target.value === this.spellwordTarget.innerText && this.level < 8) {
+      this.setNewWord(this.level)
+      this.wordcountTarget.innerText = this.correctWords.length
+      if(this.correctWords.length % 3 === 0) this.level++;
+      e.target.value = "";
+    }
   }
 
   stopGame(){
