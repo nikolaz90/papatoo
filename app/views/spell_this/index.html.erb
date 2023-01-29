@@ -1,9 +1,10 @@
 <%= link_to "<- back", :back %>
 
 <section class="spell-this-section" data-controller="spell-this">
-  <h1>Spell This : </h1>
+  <h4 data-spell-this-target="encouragement">Computer says : Can you spell this word? The big word below? </h4>
   <h1 class="word-to-be-spelt" data-spell-this-target="spellword">WORD</h1>
-  <section class="counter-answer-container">
+  <h1 class="spell-this-go-btn" data-spell-this-target="goBtn" data-action="click->spell-this#startGame">Go!</h1>
+  <section class="counter-answer-container" data-spell-this-target='counterAnswerContainer'>
     <div class="counter-level-word-container">
       <div class="counter count-box">Timer: <span data-spell-this-target="timer">0</span></div>
       <div class="level count-box">Level: <span data-spell-this-target="level">1</span></div>
