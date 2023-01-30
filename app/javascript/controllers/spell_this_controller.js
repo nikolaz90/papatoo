@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="spell-this"
 export default class extends Controller {
-  static targets = ['spellword', 'timer', 'level', 'wordcount', 'encouragement', 'counterAnswerContainer', 'goBtn']
+  static targets = ['spellword', 'timer', 'level', 'wordcount', 'encouragement', 'counterAnswerContainer', 'goBtn', 'submitScore']
 
   library = [
     ["I", "hi", "you", "then", "at", "it", "eat","oh", "for", "tot"],
@@ -83,5 +83,6 @@ export default class extends Controller {
   stopGameWinner(){
     this.spellwordTarget.innerHTML = "winner winner winner <br/> ------ <br/> Spell this : <br/> YOU'RE AWESOME <br/> ------ <br/> winner winner winner"
     this.counterAnswerContainerTarget.style.display = "none"
+    this.submitScoreTarget.style.display = "block"
   }
 }

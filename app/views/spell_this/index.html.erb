@@ -18,4 +18,12 @@
       <input type="text" id="spell-this-answer" name="spell-answer" placeholder="... type here stupid ..." data-action="input->spell-this#userAnswer">
     </form>
   </section>
+  <% if user_signed_in? %>
+    <div class="submit-score-form" data-spell-this-target="submitScore">
+      <%= simple_form_for @game_score do |form| %>
+      <h4></h4>
+      <%= form.submit "save score" %>
+      <% end %>
+    </div>
+  <% end %>
 </section>
