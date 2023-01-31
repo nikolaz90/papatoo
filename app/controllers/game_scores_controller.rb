@@ -4,6 +4,7 @@ class GameScoresController < ApplicationController
     @game_score.user = current_user
     @game_score.save
     redirect_to games_path
+    authorize @game_score
   end
 
   private
