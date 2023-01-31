@@ -40,7 +40,7 @@ export default class extends Controller {
         if(!this.isWinner) this.stopGameLooser();
         clearInterval(interval);
       }
-    }, 1000);
+    }, 10);
   }
 
   setNewWord(level){
