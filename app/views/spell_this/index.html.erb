@@ -21,7 +21,8 @@
   <% if user_signed_in? %>
     <div class="submit-score-form" data-spell-this-target="submitScore">
       <%= simple_form_for @game_score do |form| %>
-      <h4></h4>
+      <input class="form-control string optional" hidden value="spell this" type="text" name="game_score[game_name]" id="game_score_game_name">
+      <input class="form-control numeric integer optional" hidden value="0" type="number" step="1" name="game_score[score]" id="game_score_score" data-spell-this-target="finalScore">
       <%= form.submit "save score" %>
       <% end %>
     </div>

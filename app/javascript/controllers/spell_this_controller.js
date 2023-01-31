@@ -2,7 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="spell-this"
 export default class extends Controller {
-  static targets = ['spellword', 'timer', 'level', 'wordcount', 'encouragement', 'counterAnswerContainer', 'goBtn', 'submitScore']
+  static targets = [
+    'spellword', 'timer', 'level', 'wordcount',
+    'encouragement', 'counterAnswerContainer', 'goBtn',
+    'submitScore', 'finalScore'
+  ]
 
   library = [
     ["I", "hi", "you", "then", "at", "it", "eat","oh", "for", "tot"],
@@ -21,6 +25,7 @@ export default class extends Controller {
 
   correctWords = [];
   level = 0;
+  isWinner = false;
 
   connect() {
     console.log('ready to spell punk?');
@@ -32,10 +37,10 @@ export default class extends Controller {
       if(this.timerTarget.innerText>0) {
         this.timerTarget.innerText--
       }else{
-        this.stopGameLooser();
+        if(!this.isWinner) this.stopGameLooser();
         clearInterval(interval);
       }
-    }, 1);
+    }, 1000);
   }
 
   setNewWord(level){
@@ -75,14 +80,18 @@ export default class extends Controller {
   }
 
   stopGameLooser(){
+    this.isWinner = false
     this.setEncouragement("oh dear...")
     this.spellwordTarget.innerHTML = "looser looser looser <br/> ------ <br/> Spell this : <br/> YOU LOOSE <br/> ------ <br/> looser looser looser"
     this.counterAnswerContainerTarget.style.display = "none"
   }
 
   stopGameWinner(){
-    this.spellwordTarget.innerHTML = "winner winner winner <br/> ------ <br/> Spell this : <br/> YOU'RE AWESOME <br/> ------ <br/> winner winner winner"
-    this.counterAnswerContainerTarget.style.display = "none"
-    this.submitScoreTarget.style.display = "block"
+    this.isWinner = true
+    const score = Number(this.wordcountTarget.innerText) * (9999 - Number(this.timerTarget.innerText));
+    this.spellwordTarget.innerHTML = `winner winner winner <br/> ------ <br/> Spell this : <br/> YOU'RE AWESOME <br/> ------ <br/> final score : ${score} <br/> ------ <br/> winner winner winner`;
+    this.counterAnswerContainerTarget.style.display = "none";
+    this.submitScoreTarget.style.display = "block";
+    this.finalScoreTarget.value = score;
   }
 }
