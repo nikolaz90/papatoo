@@ -3,30 +3,22 @@
   background-color: $dark-green-papatoo;
   padding: 1rem 1rem 10rem 1rem;
   border-radius: 1.1rem;
+  label {
+    color: $light-green-papatoo;
+  }
 
-
-  .form-style-tile{
-    position: absolute;
-    background-color: $light-green-papatoo;
-    width: 33%;
-    height: 12%;
-    bottom: 0px;
-    left: 0;
-    border-radius: 0 1rem 0 1rem;
-    div {
-      background-color: $light-green-papatoo;
-      width: fit-content;
-      position: absolute;
-      top: -1.5rem;
-      &::before {
-        content: "";
-        border-radius: 0 0 0 1rem;
-        display: inline-block;
-        height: 1.5rem;
-        width: 1rem;
-        box-shadow: 1px -1px 0px $dark-green-papatoo;
-        background-color: $dark-green-papatoo;
-      }
+  input[type="text"], input[type="email"], input[type="password"]{
+    transition: all ease-in-out 0.3s;
+    width: 50%;
+    min-width: 20rem;
+    border: none;
+    &:focus {
+      background-color: white;
+      width: 60%;
+      box-shadow: none;
     }
+  }
+  .form-style-tile{
+    @include bottom_left_style_tile();
   }
 }

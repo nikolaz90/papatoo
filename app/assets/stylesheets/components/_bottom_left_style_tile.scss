@@ -1,0 +1,34 @@
+@mixin bottom_left_style_tile{
+  position: absolute;
+  background-color: $light-green-papatoo;
+  width: 33%;
+  height: 12%;
+  bottom: 0px;
+  left: 0;
+  border-radius: 0 1rem 0 1rem;
+  .top-left-curve-compensation {
+    top: -1.5rem;
+    @include curve-compensation();
+  }
+  .bottom-right-curve-compensation {
+    bottom: -0.44rem;
+    right: -1rem;
+    @include curve-compensation();
+  }
+}
+
+// this is a general bit of code that allows for a inversed border radius effect, use on any edge with rotate?
+@mixin curve-compensation {
+  background-color: $light-green-papatoo;
+  width: fit-content;
+  position: absolute;
+  &::before {
+    content: "";
+    border-radius: 0 0 0 1rem;
+    display: inline-block;
+    height: 1.5rem;
+    width: 1rem;
+    box-shadow: 1px -1px 0px $dark-green-papatoo;
+    background-color: $dark-green-papatoo;
+  }
+}
