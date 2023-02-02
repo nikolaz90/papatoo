@@ -1,21 +1,42 @@
 .main-form {
+  h2 {
+    color: $light-green-papatoo;
+  }
   position: relative;
   background-color: $dark-green-papatoo;
-  padding: 1rem 1rem 10rem 1rem;
+  padding: 4rem 1rem 6rem 1rem;
   border-radius: 1.1rem;
+  text-align: center;
+
+  form abbr[title] {
+    border-bottom: none;
+    text-decoration: none;
+  }
   label {
     color: $light-green-papatoo;
   }
 
-  input[type="text"], input[type="email"], input[type="password"]{
+  input[type="text"], input[type="email"], input[type="password"] {
+    margin: 0 auto;
     transition: all ease-in-out 0.3s;
     width: 50%;
-    min-width: 20rem;
+    min-width: 15rem;
     border: none;
+    border-radius: 2rem;
     &:focus {
       background-color: white;
       width: 60%;
       box-shadow: none;
+    }
+  }
+  input[type="checkbox"] {
+    margin: 0 auto;
+    background-color: $light-green-papatoo;
+    color: black;
+    box-shadow: none;
+    border: none;
+    &:checked:before{
+      color: black;
     }
   }
   .form-style-tile{
