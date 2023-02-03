@@ -2,7 +2,8 @@
   <%= form.input :title %>
   <%= form.input :category %>
   <%= form.input :content %>
-  <%= form.input :accepts_comments, label: "allow comments for this article" %>
+  <label>Allow comments on this article</label>
+  <%= form.input :accepts_comments, class: "allow-comments-chechbox" %>
   <%= form.input :status, collection: status_options %>
-  <%= form.submit 'save' %>
+  <%= form.submit 'save', class: "cta-btn-form" %>
 <% end %>

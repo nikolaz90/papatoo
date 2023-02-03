@@ -1,0 +1,19 @@
+.new-edit-article-form{
+  fieldset {
+    width: 4rem;
+    margin: 0 auto;
+    input[type="checkbox"]{
+      &:focus {
+        box-shadow: none;
+      }
+      &:checked {
+        background-color: $dark-green-papatoo;
+        border: 1px solid $light-green-papatoo;
+      }
+      background-color: $light-green-papatoo;
+    }
+    label {
+      display: none;
+    }
+  }
+}

@@ -1,3 +1,9 @@
-<h2>Write a new article</h2>
-
-<%= render partial: 'form', locals: { article: @article, status_options: ["draft", "ask to be published"] } %>
+<section class="main-form new-edit-article-form">
+  <h2>Write a new article</h2>
+  <%= render partial: 'form', locals: { article: @article, status_options: ["draft", "ask to be published"] } %>
+  <%# --stylistic div below-- %>
+  <div class="form-style-tile">
+    <div class="top-left-curve-compensation"></div>
+    <div class="bottom-right-curve-compensation"></div>
+  </div>
+</section>
