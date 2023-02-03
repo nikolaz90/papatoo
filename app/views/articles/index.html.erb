@@ -31,7 +31,7 @@
       <h5 class="article-index-card-number" style="background: rgb(<%= rand(50..255) %>,<%= rand(50..255) %>,<%= rand(50..255) %>)"><%= index + 1 %></h5>
       <h5><%= item.title %></h5>
       <p><small>by: <%= item.user == current_user ? "you wrote this article!" : item.user.username %></small></p>
-      <p><%= item.content.truncate(50) %></p>
+      <p><%= item.content.truncate(35) %></p>
     <% end %>
   <% end %>
 </section>
