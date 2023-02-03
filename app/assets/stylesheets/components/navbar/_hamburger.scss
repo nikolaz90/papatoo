@@ -1,0 +1,59 @@
+#hamburger-checkbox{
+  display: none;
+}
+
+.hamburger{
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 15px;
+  cursor: pointer;
+}
+
+.hamburger-line,
+.hamburger-line::before,
+.hamburger-line::after{
+  margin-right: 2rem;
+  padding: 0px;
+  display:block;
+  height: 0.2rem;
+  width: 40px;
+  background: $dark-green-papatoo;
+  position: absolute;
+  border-radius: 3px;
+  transition: transform 0.5s cubic-bezier(0.1, 1, 0.5, 1);
+}
+
+.hamburger-line::before{
+  content: "";
+  margin-top: -10px;
+}
+.hamburger-line::after{
+  content: "";
+  margin-top: 10px;
+}
+
+#hamburger-checkbox:checked + .hamburger .hamburger-line::before{
+  margin-top: 0px;
+  transform: rotate(180deg);
+  background-color: $mid-green-papatoo;
+}
+
+#hamburger-checkbox:checked + .hamburger .hamburger-line{
+  background-color: rgba(0,0,0,0);
+}
+
+#hamburger-checkbox:checked + .hamburger .hamburger-line::after{
+  margin-top:0px;
+  transform: rotate(-90deg);
+  background-color: $mid-green-papatoo;
+}
+
+
+@media (max-width: 1000px) {
+  .hamburger{
+      display: flex;
+  }
+}

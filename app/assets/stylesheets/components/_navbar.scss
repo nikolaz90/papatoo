@@ -1,15 +1,15 @@
-.papatoo-navbar {
-  @include flex-row();
-  // padding: 0.5rem;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
-  a {
-    transition: all ease-in-out 0.3s;
-    color: $mid-green-papatoo;
-    padding: 0 0.4rem;
-    &:hover {
-      color: $dark-green-papatoo;
-    }
-  }
-}
+// .papatoo-navbar {
+//   @include flex-row();
+//   // padding: 0.5rem;
+//   align-items: center;
+//   justify-content: space-between;
+//   border-bottom: 1px solid black;
+//   a {
+//     transition: all ease-in-out 0.3s;
+//     color: $mid-green-papatoo;
+//     padding: 0 0.4rem;
+//     &:hover {
+//       color: $dark-green-papatoo;
+//     }
+//   }
+// }

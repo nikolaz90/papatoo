@@ -1,22 +1,50 @@
-<nav class="papatoo-navbar">
-  <%= link_to root_path do %>
-    <h1>Papatoo</h1>
-  <% end %>
+<header data-controller="navbar">
+  <nav class="papatoo-navbar" >
+    <%= link_to root_path do %>
+      <h1>Papatoo</h1>
+    <% end %>
 
+    <input id='hamburger-checkbox' type='checkbox'/>
+    <label class='hamburger' for='hamburger-checkbox' data-action="click->navbar#toggleOverlay">
+      <div class='hamburger-line'></div>
+    </label>
+
+    <% if user_signed_in? %>
+      <div class="nav-links-container">
+        <%#<%= link_to 'locations', locations_path %>
+        <%= link_to 'games', games_path %>
+        <%= link_to 'articles', articles_path %>
+        <%= link_to 'dashboard', dashboard_index_path %>
+        <%= link_to 'logout', destroy_user_session_path, data: {turbo_method: :delete} %>
+      </div>
+    <% else %>
+      <div class="nav-links-container">
+        <%#<%= link_to 'locations', locations_path %>
+        <%= link_to 'games', games_path %>
+        <%= link_to 'articles', articles_path %>
+        <%= link_to 'login', new_user_session_path %>
+      <input id='hamburger-checkbox' type='checkbox'/>
+      </div>
+    <% end %>
+  </nav>
+
+  <%# Overlay for mobile %>
   <% if user_signed_in? %>
-    <div class="nav-links-container">
-      <%#<%= link_to 'locations', locations_path %>
-      <%= link_to 'games', games_path %>
-      <%= link_to 'articles', articles_path %>
-      <%= link_to 'dashboard', dashboard_index_path %>
-      <%= link_to 'logout', destroy_user_session_path, data: {turbo_method: :delete} %>
+    <div id="overlay" class='overlay-menu' data-navbar-target="overlay">
+      <ul class='nav-links-container-overlay'>
+        <%= link_to 'games', games_path %>
+        <%= link_to 'articles', articles_path %>
+        <%= link_to 'dashboard', dashboard_index_path %>
+        <%= link_to 'logout', destroy_user_session_path, data: {turbo_method: :delete} %>
+      </ul>
     </div>
   <% else %>
-    <div class="nav-links-container">
-      <%#<%= link_to 'locations', locations_path %>
-      <%= link_to 'games', games_path %>
-      <%= link_to 'articles', articles_path %>
-      <%= link_to 'login', new_user_session_path %>
+    <div id="overlay" class='overlay-menu' data-navbar-target="overlay">
+      <ul class='nav-links-container-overlay'>
+        <%= link_to 'games', games_path %>
+        <%= link_to 'articles', articles_path %>
+        <%= link_to 'login', new_user_session_path %>
+      </ul>
     </div>
   <% end %>
-</nav>
+</header>
