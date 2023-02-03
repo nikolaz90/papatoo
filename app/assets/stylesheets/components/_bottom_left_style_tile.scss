@@ -3,15 +3,16 @@
   background-color: $light-green-papatoo;
   width: 33%;
   height: 12%;
-  bottom: 0px;
-  left: 0;
+  bottom: -1px;
+  left: -1px;
   border-radius: 0 1rem 0 1rem;
   .top-left-curve-compensation {
     top: -1.5rem;
+    left: 0.1rem;
     @include curve-compensation();
   }
   .bottom-right-curve-compensation {
-    bottom: -0.44rem;
+    bottom: -0.35rem;
     right: -1rem;
     @include curve-compensation();
   }
