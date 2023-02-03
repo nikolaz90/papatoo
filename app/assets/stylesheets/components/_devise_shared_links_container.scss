@@ -1,22 +1,21 @@
 .devise-shared-links-container {
   position: relative;
-  background-color: $dark-green-papatoo;
   margin-top: 1rem;
-  background-color: #164316;
+  background-color: $mid-green-papatoo;
   border-radius: 0 1rem 1rem 1rem;
   padding: 1rem;
   .top-left-style-tile {
     position: absolute;
-    background-color: $dark-green-papatoo;
+    background-color: $mid-green-papatoo;
     width: 30%;
-    height: 50%;
-    top: -38px;
+    height: 69%;
+    top: -53px;
     left: 0rem;
     border-radius: 1rem 1rem 0 0;
     .bottom-right-curve-compensation {
       width: fit-content;
       position: absolute;
-      background-color: $dark-green-papatoo;
+      background-color: $mid-green-papatoo;
       bottom: -0.28rem;
       right: -1rem;
       &::before {
@@ -34,12 +33,9 @@
 
 @media (max-width:600px) {
   .devise-shared-links-container{
+    border-radius: 1rem;
     .top-left-style-tile{
-      .bottom-right-curve-compensation{
-        &::before {
-          border-radius: 0 1rem 0 1rem;
-        }
-      }
+      display: none;
     }
   }
 }
