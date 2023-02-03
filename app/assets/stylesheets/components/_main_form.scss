@@ -41,5 +41,6 @@
   }
   .form-style-tile{
     @include bottom_left_style_tile();
+    left: -1px;
   }
 }

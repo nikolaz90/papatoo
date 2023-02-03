@@ -1,0 +1,18 @@
+.top-right-style-tile {
+  @include bottom-left-style-tile();
+  width: 23%;
+  height: 8%;
+  .top-left-curve-compensation {
+    top: -0.35rem;
+    left: -1rem;
+    transform: rotate(180deg);
+  }
+  .bottom-right-curve-compensation {
+    bottom: -1.5rem;
+    right: 0.1rem;
+    transform: rotate(180deg);
+  }
+  top: -1px;
+  right: -1px;
+  border-radius: 0 1rem 0 1rem;
+}

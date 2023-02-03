@@ -9,6 +9,10 @@
 $body-font: 'Raleway', sans-serif;
 $headers-font: 'Raleway', sans-serif;
 
+.backwards {
+  transform: scale(-1, 1);
+}
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";
