@@ -1,5 +1,6 @@
 class ArticleVocabularyFlagger
   def self.find_articles_with_inappropriate_language
-    @articles = Article.where("content LIKE ?", "%beginning%")
+    bad_words = ["looser", "shit", "tosser"].join(' ')
+    Article.search_title_and_content(bad_words)
   end
 end
