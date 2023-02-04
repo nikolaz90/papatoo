@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import GreenbgController from "./greenbg_controller"
+application.register("greenbg", GreenbgController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
