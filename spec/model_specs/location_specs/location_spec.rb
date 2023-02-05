@@ -33,5 +33,10 @@ RSpec.describe Comment, type: :model do
       location = Location.create(user: valid_user, long: 0.00, lat: 0.00, start_time: Time.now + 2.days)
       expect(valid_user.locations.first).to eq location
     end
+
+    it 'location should reverse geocode and have correct address provided from the long lat values' do
+      location = Location.create(user: valid_user,  long: 0.9254070101469551, lat: 48.913246140591184, start_time: Time.now + 2.days)
+      expect(location.address).to eq "Rue du Château Eau, La Butte, Nagel-Séez-Mesnil, Évreux, Eure, Normandy, Metropolitan France, 27190, France"
+    end
   end
 end
