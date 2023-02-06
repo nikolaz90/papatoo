@@ -9,11 +9,18 @@ export default class extends Controller {
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue;
-    console.log(this.markersValue);
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     });
+
+    this.map.on('click', (e) => {
+      this.#addTempMarker(e.lngLat)
+      // `e.lngLat` is the longitude, latitude geographical position of the event.
+
+      document.getElementById('info').innerHTML =
+        JSON.stringify(e.lngLat.wrap());
+      });
 
     this.#addMarkers();
     this.#zoomMapToMarkers();
@@ -29,6 +36,17 @@ export default class extends Controller {
         .setPopup(popupDetails)
         .addTo(this.map)
     })
+  }
+
+  #addTempMarker(coordinates){
+    // removes the previous markers (only on client side)
+    this.map._markers.forEach((i) => i.remove())
+    // creates temp marker on map (only on client side)
+    const papatooMarker = document.createElement('div')
+    papatooMarker.innerHTML = "<div class='papatoo-marker'><h3>?</h3></div>"
+    new mapboxgl.Marker(papatooMarker)
+      .setLngLat([ coordinates.lng, coordinates.lat ])
+      .addTo(this.map)
   }
 
   #zoomMapToMarkers() {

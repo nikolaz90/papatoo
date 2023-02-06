@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Comment, type: :model do
-  describe 'A can create a location' do
+RSpec.describe Location, type: :model do
+  describe 'A user can create a location' do
     let(:valid_user) { User.create(email: 'location@test.com', password: 'testtest', username: 'location_test_1') }
 
     it 'should not be valid without a user' do
@@ -20,7 +20,7 @@ RSpec.describe Comment, type: :model do
     end
 
     it 'user should be able to create a valid location' do
-      location = Location.new(user: valid_user, long: 0.00, lat: 0.00, start_time: Time.now + 2.days)
+      location = Location.new(user: valid_user, description: "out with dog", long: 0.00, lat: 0.00, start_time: Time.now + 2.days)
       expect(location.valid?).to eq true
     end
 
@@ -30,7 +30,7 @@ RSpec.describe Comment, type: :model do
     end
 
     it 'user should have access to locations' do
-      location = Location.create(user: valid_user, long: 0.00, lat: 0.00, start_time: Time.now + 2.days)
+      location = Location.create(user: valid_user, description: "out for shopping", long: 0.00, lat: 0.00, start_time: Time.now + 2.days)
       expect(valid_user.locations.first).to eq location
     end
 
