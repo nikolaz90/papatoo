@@ -32,5 +32,10 @@ RSpec.describe Article, type: :model do
       article_one = Article.create(user: random_user, title: 'article 2')
       expect { random_user.destroy }.to change { Article.count }.by(-1)
     end
+
+    it 'article_vocabulary_flagger should return articles with rude words' do
+      rude_article = Article.create(user: valid_user, title: 'article 2', content: 'this is a mean article shit!!')
+      expect(ArticleVocabularyFlagger.find_articles_with_inappropriate_language.first).to eq rude_article
+    end
   end
 end
