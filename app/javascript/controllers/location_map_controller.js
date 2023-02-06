@@ -14,6 +14,14 @@ export default class extends Controller {
       style: "mapbox://styles/mapbox/streets-v10"
     });
 
+    this.map.on('dblclick', (e) => {
+      this.#addTempMarker(e.lngLat)
+      // `e.lngLat` is the longitude, latitude geographical position of the event.
+
+      document.getElementById('info').innerHTML =
+        JSON.stringify(e.lngLat.wrap());
+      });
+
     this.#addMarkers();
     this.#zoomMapToMarkers();
   }
@@ -28,20 +36,6 @@ export default class extends Controller {
         .setPopup(popupDetails)
         .addTo(this.map)
     })
-  }
-
-  addTemp(e) {
-    // allow user to add a location on double click and hold down ctrl key
-    if(e.ctrlKey){
-      this.map.on('click', (e) => {
-        this.#addTempMarker(e.lngLat)
-        // `e.lngLat` is the longitude, latitude geographical position of the event.
-
-        document.getElementById('info').innerHTML =
-          JSON.stringify(e.lngLat.wrap());
-        });
-    }
-
   }
 
   #addTempMarker(coordinates){
