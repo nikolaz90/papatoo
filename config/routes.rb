@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # comments
 
   # locations
-  resources :locations, only: %i[index]
+  resources :locations, only: %i[index create]
 
   # games
   get "games", to: "pages#games"

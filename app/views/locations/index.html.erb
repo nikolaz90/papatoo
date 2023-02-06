@@ -1,7 +1,28 @@
 <h1>Locations</h1>
 <p id="info">Oops - this feature is no where near finished... come back another time</p>
 
-<section class="location-map-container"
-  data-controller="location-map"
-  data-location-map-markers-value="<%= @markers.to_json %>"
-  data-location-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></section>
+<p class="text-for-pc">Double click to add a location</p>
+<p class="text-for-mobile">On mobile: tap and hold a location and then tap again (double click) to add a location</p>
+
+<section data-controller="location-form">
+  <%# map container %>
+  <section class="location-map-container"
+    data-controller="location-map"
+    data-location-map-markers-value="<%= @markers.to_json %>"
+    data-location-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-action="dblclick->location-form#openForm"></section>
+
+  <section class="main-form location-create-form" data-location-form-target="form">
+    <%= simple_form_for @location do |form| %>
+      <%= form.input :description, label: 'Description: (dog walking, park run...)' %>
+      <%= form.input :start_time, label: 'When:' %>
+      <%= form.input :duration, label: 'Duration in minutes:' %>
+      <%= form.submit %>
+    <% end %>
+    <%# stylistic div below %>
+    <div class="form-style-tile">
+      <div class="top-left-curve-compensation"></div>
+      <div class="bottom-right-curve-compensation"></div>
+    </div>
+  </section>
+</section>

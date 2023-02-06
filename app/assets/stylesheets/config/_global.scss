@@ -17,3 +17,18 @@ a {
     color: black;
   }
 }
+
+
+// conditionally display text on screen width
+.text-for-mobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .text-for-pc {
+    display: none;
+  }
+  .text-for-mobile {
+    display: block;
+  }
+}
