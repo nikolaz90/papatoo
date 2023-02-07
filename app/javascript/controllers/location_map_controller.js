@@ -13,16 +13,11 @@ export default class extends Controller {
       container: this.element,
       style: "mapbox://styles/mapbox/streets-v10"
     });
+    this.map.doubleClickZoom.disable();
 
     this.map.on('dblclick', (e) => {
       this.#addTempMarker(e.lngLat)
-      // `e.lngLat` is the longitude, latitude geographical position of the event.
-      document.getElementById('info').innerHTML = JSON.stringify(e.lngLat.wrap());
-
-      document.getElementById('location-create-form-container').style.display = 'block';
-      document.getElementById('location_long').value = e.lngLat.lng;
-      document.getElementById('location_lat').value = e.lngLat.lat;
-
+      // `e.lngLat` is the longitude, latitude geographical position of the event
     });
 
     this.#addMarkers();
@@ -42,8 +37,14 @@ export default class extends Controller {
   }
 
   #addTempMarker(coordinates){
+    // show form and add coordonates to hidden input fields
+    document.getElementById('location-create-form-container').style.display = 'block';
+    document.getElementById('location_long').value = coordinates.lng;
+    document.getElementById('location_lat').value = coordinates.lat;
     // removes the previous markers (only on client side)
-    this.map._markers.forEach((i) => i.remove())
+    for(let i = this.map._markers.length - 1; i >= 0; i--){
+      this.map._markers[i].remove()
+    }
     // creates temp marker on map (only on client side)
     const papatooMarker = document.createElement('div')
     papatooMarker.innerHTML = "<div class='papatoo-marker'><h3>?</h3></div>"

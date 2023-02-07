@@ -1,0 +1,37 @@
+.location-map-form-container {
+  @include flex-row();
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-map-container{
+  max-width: 35rem;
+  min-width: 12rem;
+  height: 50vh;
+  max-height: 20rem;
+  border: 3px solid;
+  border-radius: 1rem;
+  width: 45vw;
+}
+
+.location-create-form {
+  margin-top: 1rem;
+  display: none;
+  transition: all ease-in-out 0.3s;
+  max-width: 35rem;
+  min-width: 12rem;
+  width: 45vw;
+}
+
+@media (max-width: 800px) {
+  .location-map-form-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .location-map-container {
+    width: 95vw;
+  }
+  .location-create-form {
+    width: 95vw;
+  }
+}

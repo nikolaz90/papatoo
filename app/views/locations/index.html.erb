@@ -4,7 +4,7 @@
 <p class="text-for-pc">Double click to add a location</p>
 <p class="text-for-mobile">On mobile: tap and hold a location and then tap again (double click) to add a location</p>
 
-<section data-controller="location-form">
+<section class="location-map-form-container">
   <%# map container %>
   <section class="location-map-container"
     data-controller="location-map"
@@ -13,13 +13,14 @@
     data-action="dblclick->location-form#openForm"></section>
 
   <section class="main-form location-create-form" id="location-create-form-container">
+    <h2>Add your own activity and location</h2>
     <%= simple_form_for @location do |form| %>
       <input class="form-control numeric float required" hidden type="number" step="any" name="location[long]" id="location_long">
       <input class="form-control numeric float required" hidden type="number" step="any" name="location[lat]" id="location_lat">
       <%= form.input :description, label: 'Description: (dog walking, park run...)' %>
       <%= form.input :start_time, label: 'When:' %>
-      <%= form.input :duration, label: 'Duration in minutes:' %>
-      <%= form.submit %>
+      <%= form.input :duration, label: 'Duration in minutes:', input_html: { step: 30 } %>
+      <%= form.submit class: 'cta-btn-form' %>
     <% end %>
     <%# stylistic div below %>
     <div class="form-style-tile">

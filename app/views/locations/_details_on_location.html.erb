@@ -1,4 +1,5 @@
 <h3><%= location.user.username %></h3>
-<p><%= location.address.truncate(40) %></p>
 <p><%= location.description %></p>
+<p>at <%= formated_day_time_date(location.start_time) %></p>
 <p>duration: <%=location.duration %> mins</p>
+<p><%= location.address.truncate(40) %></p>
