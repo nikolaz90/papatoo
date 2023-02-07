@@ -19,10 +19,7 @@ class LocationsController < ApplicationController
     @location.user = current_user
     authorize @location
 
-    raise
-    if @location.save
-    else
-    end
+    redirect_to locations_path if @location.save
   end
 
   private
