@@ -15,12 +15,19 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new
+    @location = Location.new(location_params)
+    @location.user = current_user
     authorize @location
 
     raise
     if @location.save
     else
     end
+  end
+
+  private
+
+  def location_params
+    params.require(:location).permit(:long, :lat, :description, :start_time, :duration)
   end
 end

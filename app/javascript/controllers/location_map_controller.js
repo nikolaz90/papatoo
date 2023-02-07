@@ -17,10 +17,13 @@ export default class extends Controller {
     this.map.on('dblclick', (e) => {
       this.#addTempMarker(e.lngLat)
       // `e.lngLat` is the longitude, latitude geographical position of the event.
+      document.getElementById('info').innerHTML = JSON.stringify(e.lngLat.wrap());
 
-      document.getElementById('info').innerHTML =
-        JSON.stringify(e.lngLat.wrap());
-      });
+      document.getElementById('location-create-form-container').style.display = 'block';
+      document.getElementById('location_long').value = e.lngLat.lng;
+      document.getElementById('location_lat').value = e.lngLat.lat;
+
+    });
 
     this.#addMarkers();
     this.#zoomMapToMarkers();
