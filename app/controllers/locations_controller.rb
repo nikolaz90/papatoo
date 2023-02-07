@@ -18,8 +18,14 @@ class LocationsController < ApplicationController
     @location = Location.new(location_params)
     @location.user = current_user
     authorize @location
-
     redirect_to locations_path if @location.save
+  end
+
+  def destroy
+    @location = Location.find(params[:id])
+    authorize @location
+    @location.destroy
+    redirect_to locations_path
   end
 
   private
