@@ -6,4 +6,8 @@ class Location < ApplicationRecord
 
   reverse_geocoded_by :lat, :long
   after_validation :reverse_geocode
+
+  scope :current_and_future_locations, -> {
+    where("start_time >= :time_now", time_now: Time.now - 6.hours)
+  }
 end
