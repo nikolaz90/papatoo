@@ -38,9 +38,13 @@ export default class extends Controller {
 
   #addTempMarker(coordinates){
     // show form and add coordonates to hidden input fields
+    const locationForm = document.getElementById('location-create-form-container')
     document.getElementById('location-create-form-container').style.display = 'block';
     document.getElementById('location_long').value = coordinates.lng;
     document.getElementById('location_lat').value = coordinates.lat;
+    if(window.screen.width < 800) {
+      locationForm.scrollIntoView()
+    }
     // removes the previous markers (only on client side)
     for(let i = this.map._markers.length - 1; i >= 0; i--){
       this.map._markers[i].remove()
