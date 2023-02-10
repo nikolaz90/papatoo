@@ -3,7 +3,6 @@ class LocationsController < ApplicationController
   def index
     policy_scope(Location)
     @location = Location.new
-    # @locations = Location.all.includes(:user)
     @locations = Location.current_and_future_locations.includes(:user)
     @markers = @locations.geocoded.map do |item|
       {

@@ -19,7 +19,7 @@
       <input class="form-control numeric float required" hidden type="number" step="any" name="location[lat]" id="location_lat">
       <%= form.input :description, label: 'Description: (dog walking, park run...)' %>
       <%= form.input :start_time, label: 'When:' %>
-      <%= form.input :duration, label: 'Duration in minutes:', input_html: { step: 30 } %>
+      <%= form.input :duration, label: 'Duration in minutes:', input_html: { step: 30, min: 30 } %>
       <%= form.submit class: 'cta-btn-form' %>
     <% end %>
     <%# stylistic div below %>
