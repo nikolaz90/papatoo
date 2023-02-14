@@ -1,6 +1,7 @@
 <h1>Locations</h1>
-<p id="info">Oops - this feature is no where near finished... come back another time</p>
+<p id="info">Connect with people near you doing an activity and who are open to share with you</p>
 
+<p>Have an activity you love doing? Don't mind if someone joins you spontaneously?</p>
 <p class="text-for-pc">Double click to add a location</p>
 <p class="text-for-mobile">On mobile: tap and hold a location and then tap again (double click) to add a location</p>
 
@@ -22,6 +23,8 @@
       <%= form.input :duration, label: 'Duration in minutes:', input_html: { step: 30, min: 30 } %>
       <%= form.submit class: 'cta-btn-form' %>
     <% end %>
+    <br>
+    <%= link_to "cancel", locations_path %>
     <%# stylistic div below %>
     <div class="form-style-tile">
       <div class="top-left-curve-compensation"></div>
