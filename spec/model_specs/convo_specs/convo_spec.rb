@@ -15,5 +15,14 @@ RSpec.describe Convo, type: :model do
       convo_2 = Convo.new(sender: valid_user, receiver: second_valid_user)
       expect(convo_2.valid?).to eq false
     end
+
+    it 'should have a class method that retrieves convos between two users' do
+      third_user = User.create(email: 'convo3@test.com', password: 'testtest', username: 'convo_test_3')
+      convo = Convo.create!(sender: valid_user, receiver: second_valid_user)
+      Convo.create!(sender: valid_user, receiver: third_user)
+
+      expect(Convo.between(valid_user.id, second_valid_user.id).first).to eq convo
+      expect(Convo.between(valid_user.id, third_user.id).length).to eq 1
+    end
   end
 end
