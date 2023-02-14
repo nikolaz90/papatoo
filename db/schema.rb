@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_09_195232) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_14_162058) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -36,6 +36,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_195232) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "convos", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "game_scores", force: :cascade do |t|
     t.integer "score"
     t.string "game_name"
@@ -59,6 +66,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_195232) do
     t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.bigint "convo_id", null: false
+    t.bigint "user_id", null: false
+    t.string "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["convo_id"], name: "index_messages_on_convo_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -79,4 +96,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_195232) do
   add_foreign_key "comments", "users"
   add_foreign_key "game_scores", "users"
   add_foreign_key "locations", "users"
+  add_foreign_key "messages", "convos"
+  add_foreign_key "messages", "users"
 end
