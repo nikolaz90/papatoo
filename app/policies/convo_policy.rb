@@ -6,7 +6,7 @@ class ConvoPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.where(receiver: user) || scope.where(sender: user)
+      scope.where(receiver: user).or(scope.where(sender: user))
     end
   end
 end
