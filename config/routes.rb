@@ -9,11 +9,13 @@ Rails.application.routes.draw do
   get "my_articles", to: "articles#my_index"
   get "articles_for_validation", to: "admins#articles_for_validation"
 
-  # comments
-
   # locations
   resources :locations, only: %i[index create destroy]
 
+  # convos
+  resources :convos, only: %i[index] do
+    resources :messages, only: %i[create]
+  end
   # games
   get "games", to: "pages#games"
 
