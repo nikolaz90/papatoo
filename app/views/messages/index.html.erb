@@ -1,10 +1,15 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
-<% @messages.each do |item| %>
-  <%= item.user.username %> : <%= item.content %>
-<% end %>
+<h1>Messages</h1>
+<section data-controller='messages'
+         data-messages-convo-value="<%= @convo.id %>"
+         data-messages-user-name-value="<%= current_user.username %>">
+  <% @messages.each do |item| %>
+    <%= render partial: 'message', locals: { message: item } %>
+  <% end %>
 
-<%= simple_form_for [@convo, @message] do |form| %>
-  <%= form.input :content %>
-  <%= form.submit 'send' %>
-<% end %>
+  <%= simple_form_for [@convo, @message],
+      html: { data: { action: "turbo:submit-end->messages#afterSend" } },
+      required: true do |form| %>
+    <%= form.input :content %>
+    <%= form.submit 'send' %>
+  <% end %>
+</section>

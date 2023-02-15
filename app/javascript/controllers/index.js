@@ -10,6 +10,9 @@ application.register("hello", HelloController)
 import LocationMapController from "./location_map_controller"
 application.register("location-map", LocationMapController)
 
+import MessagesController from "./messages_controller"
+application.register("messages", MessagesController)
+
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 

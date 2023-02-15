@@ -5,8 +5,12 @@ class MessagesController < ApplicationController
     unless @convo.sender == current_user || @convo.receiver == current_user
       redirect_to convos_path, notice: "Probably not you convo. Access denied."
     end
-    @messages = @convo.messages
     @message = Message.new
+    @messages = @convo.messages
+    respond_to do |format|
+      format.html
+      format.json { render json: @messages }
+    end
     policy_scope(Message)
   end
 
@@ -17,6 +21,7 @@ class MessagesController < ApplicationController
     if @message.save
       redirect_to convo_messages_path(@convo)
     else
+      @messages = @convo.messages
       render :index
     end
     authorize @message
