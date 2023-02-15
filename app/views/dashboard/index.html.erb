@@ -5,6 +5,8 @@
 
 <p><%= link_to 'account settings', edit_user_registration_path %></p>
 
+<p><%= link_to 'convos', convos_path %></p>
+
 <% if policy(:admin).articles_for_validation? %>
   <p><%= link_to 'articles for validation', articles_for_validation_path %></p>
 <% end %>
