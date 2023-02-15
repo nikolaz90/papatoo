@@ -2,9 +2,11 @@
 <section data-controller='messages'
          data-messages-convo-value="<%= @convo.id %>"
          data-messages-user-name-value="<%= current_user.username %>">
-  <% @messages.each do |item| %>
-    <%= render partial: 'message', locals: { message: item } %>
-  <% end %>
+  <section data-messages-target="container">
+    <% @messages.each do |item| %>
+      <%= render partial: 'message', locals: { message: item } %>
+    <% end %>
+  </section>
 
   <%= simple_form_for [@convo, @message],
       html: { data: { action: "turbo:submit-end->messages#afterSend" } },

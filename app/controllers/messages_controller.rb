@@ -9,7 +9,8 @@ class MessagesController < ApplicationController
     @messages = @convo.messages
     respond_to do |format|
       format.html
-      format.json { render json: @messages }
+      # format.json { render json: @messages }
+      format.json
     end
     policy_scope(Message)
   end

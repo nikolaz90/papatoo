@@ -1,4 +1,4 @@
-<article id="<%= message.user.username %>-msg-<%= message.id %>">
+<article class="<%= 'my-msg' if message.user == current_user %>" id="<%= message.user.username %>-msg-<%= message.id %>">
   <h5><%= message.user.username %></h5>
   <p><%= message.content %></p>
 </article>
