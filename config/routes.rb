@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   # convos
   resources :convos, only: %i[index] do
-    resources :messages, only: %i[create]
+    resources :messages, only: %i[index create]
   end
   # games
   get "games", to: "pages#games"
