@@ -1,3 +1,14 @@
+.std-msg {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: $yellow;
+  text-align: left;
+  border-radius: 1rem 1rem 1rem 0;
+}
+
 .my-msg {
-  background-color: aqua;
+  background-color: $mid-green-papatoo;
+  color: $light-green-papatoo;
+  text-align: right;
+  border-radius: 1rem 1rem 0 1rem;
 }

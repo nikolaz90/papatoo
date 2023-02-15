@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :locations, only: %i[index create destroy]
 
   # convos
-  resources :convos, only: %i[index] do
+  resources :convos, only: %i[index create] do
     resources :messages, only: %i[index create]
   end
   # games

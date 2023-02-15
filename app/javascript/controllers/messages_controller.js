@@ -24,7 +24,6 @@ export default class extends Controller {
         this.fetchedMsgs = data.map((item) => item.html)
         this.updateAllMsgs()
       })
-    console.log(this.fetchedMsgs);
   }
 
   updateAllMsgs(){
