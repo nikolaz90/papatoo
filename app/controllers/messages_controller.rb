@@ -3,13 +3,12 @@ class MessagesController < ApplicationController
 
   def index
     unless @convo.sender == current_user || @convo.receiver == current_user
-      redirect_to convos_path, notice: "Probably not you convo. Access denied."
+      redirect_to convos_path, notice: "Probably not your convo. Access denied."
     end
     @message = Message.new
-    @messages = @convo.messages
+    @messages = @convo.messages.includes(:user)
     respond_to do |format|
       format.html
-      # format.json { render json: @messages }
       format.json
     end
     policy_scope(Message)
