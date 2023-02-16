@@ -3,12 +3,18 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid black;
+  background-color: $dark-green-papatoo;
+  border-radius: 1rem;
+  padding: 1rem;
+  .nav-title {
+    color: $light-green-papatoo;
+  }
   a {
     transition: all ease-in-out 0.3s;
     color: $mid-green-papatoo;
     padding: 0 0.4rem;
     &:hover {
-      color: $dark-green-papatoo;
+      color: $light-green-papatoo;
     }
   }
 }
