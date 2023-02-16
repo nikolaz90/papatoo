@@ -2,7 +2,7 @@ class Location < ApplicationRecord
   belongs_to :user
 
   validates :long, :lat, :description, :duration, :start_time, presence: true
-  validates :duration, numericality: { greater_than: 0 }
+  validates :duration, numericality: { greater_than: 0, less_than_or_equal_to: 1200 }
   attribute :duration, :integer, default: 30
   attribute :start_time, :datetime, default: Time.now
 
