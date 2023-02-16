@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :locations, dependent: :destroy
   has_many :game_scores, dependent: :destroy
+  has_many :messages, dependent: :destroy
   has_many :convos
 
   validates :username, presence: true, uniqueness: true

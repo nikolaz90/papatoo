@@ -1,10 +1,14 @@
 <h1>Convos</h1>
 <% @convos.each do |item| %>
   <%= link_to convo_messages_path(item) do %>
-    <% if current_user.username == item.receiver.username %>
-      <p><%= item.sender.username %></p>
+    <% if item.receiver.nil? || item.sender.nil? %>
+      'This correspondant has deleted their account'
     <% else %>
-      <p><%= item.receiver.username %></p>
+      <% if current_user.username == item.receiver.username %>
+        <p><%= item.sender.username %></p>
+      <% else %>
+        <p><%= item.receiver.username %></p>
+      <% end %>
     <% end %>
   <% end %>
 <% end %>
