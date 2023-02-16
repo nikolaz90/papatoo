@@ -15,4 +15,8 @@ class Convo < ApplicationRecord
       OR (convos.receiver_id = ? AND convos.sender_id = ?)",
       sender_id, receiver_id, receiver_id, sender_id)
   end
+
+  def correspondant_has_deleted_account
+    User.where(id: receiver_id).empty? || User.where(id: sender_id).empty?
+  end
 end

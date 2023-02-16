@@ -24,5 +24,11 @@ RSpec.describe Convo, type: :model do
       expect(Convo.between(valid_user.id, second_valid_user.id).first).to eq convo
       expect(Convo.between(valid_user.id, third_user.id).length).to eq 1
     end
+
+    it 'convo.correspondant_has_deleted_account should return true if receiver or sender no longer has an account' do
+      convo = Convo.create!(sender: valid_user, receiver: second_valid_user)
+      valid_user.destroy
+      expect(convo.correspondant_has_deleted_account).to eq true
+    end
   end
 end
