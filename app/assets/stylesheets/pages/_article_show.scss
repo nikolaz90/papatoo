@@ -1,0 +1,19 @@
+.article-page-section {
+  .article-show {
+    @include radius-w-padding();
+    background-color: $light-gray;
+  }
+
+  .article-comments-section {
+    @include radius-w-padding();
+    .article-comment {
+      @include radius-w-padding();
+      &:nth-child(even){
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+      &:nth-child(odd){
+        background-color: rgba(230, 228, 176, 0.7);
+      }
+    }
+  }
+}

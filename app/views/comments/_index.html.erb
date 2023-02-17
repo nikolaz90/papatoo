@@ -1,5 +1,7 @@
 <h3>Comments</h3>
 <% comments.each do |item| %>
-  <p><%= item.content %></p>
-  <p><small><%= item.user.username %></small></p>
+  <article class="article-comment">
+    <p><%= item.content %></p>
+    <p><small><%= item.user.username %></small></p>
+  </article>
 <% end %>
