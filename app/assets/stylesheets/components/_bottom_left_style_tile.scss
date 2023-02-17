@@ -1,6 +1,6 @@
 @mixin bottom_left_style_tile{
   position: absolute;
-  background-color: $light-green-papatoo;
+  background-color: $blue-papatoo;
   width: 33%;
   height: 12%;
   bottom: -1px;
@@ -20,7 +20,7 @@
 
 // this is a general bit of code that allows for a inversed border radius effect, use on any edge with rotate?
 @mixin curve-compensation {
-  background-color: $light-green-papatoo;
+  background-color: $blue-papatoo;
   width: fit-content;
   position: absolute;
   &::before {
