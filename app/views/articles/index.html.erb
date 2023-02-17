@@ -28,7 +28,7 @@
 <section class="article-index-second-section">
   <% @articles.each_with_index do |item, index| %>
     <%= link_to article_path(item), class:"article-index-card" do %>
-      <h5 class="article-index-card-number" style="background: rgb(<%= rand(50..255) %>,<%= rand(50..255) %>,<%= rand(50..255) %>)"><%= index + 1 %></h5>
+      <h5 class="article-index-card-number" style="background: rgba(<%= rand(50..255) %>,<%= rand(50..255) %>,<%= rand(50..255) %>, 0.1)"><%= index + 1 %></h5>
       <h5><%= item.title %></h5>
       <p><small>by: <%= item.user == current_user ? "you wrote this article!" : item.user.username %></small></p>
       <p><%= item.content.truncate(35) %></p>
