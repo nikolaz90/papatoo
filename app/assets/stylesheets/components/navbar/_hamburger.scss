@@ -20,7 +20,7 @@
   display:block;
   height: 0.2rem;
   width: 28px;
-  background: $light-green-papatoo;
+  background: $blue-papatoo;
   position: absolute;
   border-radius: 3px;
   transition: transform 0.5s cubic-bezier(0.1, 1, 0.5, 1);
@@ -38,7 +38,7 @@
 #hamburger-checkbox:checked + .hamburger .hamburger-line::before{
   margin-top: 0px;
   transform: rotate(180deg);
-  background-color: $light-green-papatoo;
+  background-color: $blue-papatoo;
 }
 
 #hamburger-checkbox:checked + .hamburger .hamburger-line{
@@ -48,7 +48,7 @@
 #hamburger-checkbox:checked + .hamburger .hamburger-line::after{
   margin-top:0px;
   transform: rotate(-90deg);
-  background-color: $light-green-papatoo;
+  background-color: $blue-papatoo;
 }
 
 
