@@ -2,22 +2,21 @@
   @include flex-row();
   align-items: center;
   justify-content: space-between;
-  background-color: $dark-green-papatoo;
-  @include green-web-bg();
+  background-color: $light-green-papatoo;
   border-radius: 1rem;
   padding: 1rem;
   .nav-title {
-    color: $light-green-papatoo;
+    color: $blue-papatoo;
     font-family: $retro;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 4rem;
   }
   a {
     transition: all ease-in-out 0.3s;
-    color: $light-green-papatoo;
+    color: $blue-papatoo;
     padding: 0 0.4rem;
     &:hover {
-      color: $yellow;
+      color: $yellow-papatoo;
     }
   }
 }

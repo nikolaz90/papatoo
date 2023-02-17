@@ -23,8 +23,10 @@
     min-width: 15rem;
     border: none;
     border-radius: 2rem;
+    color: $light-green-papatoo;
     &:focus {
       background-color: white;
+      color: black;
       width: 52%;
       box-shadow: none;
     }
