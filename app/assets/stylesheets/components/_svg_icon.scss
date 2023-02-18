@@ -9,3 +9,10 @@
   left: 4rem;
   top: 4rem;
 }
+
+@media (max-width: 450px) {
+  .svg-glasses {
+    left: 2rem;
+    top: 2rem;
+  }
+}
