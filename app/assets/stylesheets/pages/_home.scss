@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+
+.about-section {
+  margin-top: 2rem;
+  background-color: $yellow-papatoo;
+  .top-right-style-tile {
+    width: 70%;
+    .top-left-curve-compensation {
+      &::before{
+        background-color: $yellow-papatoo;
+        box-shadow: 1px -1px 0px $yellow-papatoo;
+      }
+    }
+    .bottom-right-curve-compensation {
+      &::before {
+        background-color: $yellow-papatoo;
+        box-shadow: 1px -1px 0px $yellow-papatoo;
+      }
+    }
+  }
+  .form-style-tile {
+    width: 75%;
+    .top-left-curve-compensation {
+      &::before {
+        background-color: $yellow-papatoo;
+        box-shadow: 1px -1px 0px $yellow-papatoo;
+      }
+    }
+    .bottom-right-curve-compensation {
+      &::before {
+        background-color: $yellow-papatoo;
+        box-shadow: 1px -1px 0px $yellow-papatoo;
+      }
+    }
+  }
+}

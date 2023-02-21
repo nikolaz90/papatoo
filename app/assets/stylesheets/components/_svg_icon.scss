@@ -16,3 +16,17 @@
     top: 2rem;
   }
 }
+
+.svg-flipflops {
+  position: absolute;
+  bottom: 4rem;
+  right: 1rem;
+  transform: rotate(29deg);
+}
+
+@media (max-width: 450px) {
+  .svg-flipflops {
+    transform: rotate(29deg) scale(0.6);
+    bottom: 1rem;
+  }
+}
