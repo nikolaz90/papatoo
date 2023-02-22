@@ -16,7 +16,7 @@
     color: $light-green-papatoo;
   }
 
-  input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+  input[type="text"], input[type="email"], input[type="password"], input[type="number"], select, textarea {
     margin: 0 auto;
     transition: all ease-in-out 0.3s;
     width: 50%;
@@ -33,9 +33,12 @@
       box-shadow: none;
     }
   }
+  textarea {
+    border-radius: none;
+    min-height: 4rem;
+  }
   input[type="checkbox"] {
     margin: 0 auto;
-    background-color: $light-green-papatoo;
     color: black;
     box-shadow: none;
     border: none;

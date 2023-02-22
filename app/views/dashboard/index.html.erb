@@ -17,7 +17,9 @@
       <div class="dashbaord-menu-link-container"><p>convos</p>  <%= image_tag 'envoloppe.svg', class: 'svg-icon svg-dashboard-link' %></div>
     <% end %>
     <% if policy(:admin).articles_for_validation? %>
-      <p><%= link_to 'articles for validation', articles_for_validation_path %></p>
+      <%= link_to articles_for_validation_path do %>
+        <div class="dashbaord-menu-link-container"><p>articles for validation</p>  <%= image_tag 'tick_circle.svg', class: 'svg-icon svg-dashboard-link' %></div>
+      <% end %>
     <% end %>
   </article>
   <div class="form-style-tile">
