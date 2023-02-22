@@ -3,7 +3,7 @@
     background-color: white;
     padding: 1rem;
     border-radius: 1rem;
-    margin: 0 auto;
+    margin: 2rem auto;
     max-width: 30rem;
     .dashbaord-menu-link-container {
       @include flex-row();
@@ -17,6 +17,14 @@
       &:hover {
         text-decoration: underline;
       }
+    }
+  }
+}
+
+@media (max-width:450px) {
+  .dashboard-section {
+    h2 {
+      font-size: 1.8rem;
     }
   }
 }
