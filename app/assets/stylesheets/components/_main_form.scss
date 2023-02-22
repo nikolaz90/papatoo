@@ -16,7 +16,7 @@
     color: $light-green-papatoo;
   }
 
-  input[type="text"], input[type="email"], input[type="password"] {
+  input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
     margin: 0 auto;
     transition: all ease-in-out 0.3s;
     width: 50%;
@@ -24,6 +24,8 @@
     border: none;
     border-radius: 2rem;
     color: $light-green-papatoo;
+    background-color: $dark-green-papatoo;
+    border: 1px solid white;
     &:focus {
       background-color: white;
       color: black;
