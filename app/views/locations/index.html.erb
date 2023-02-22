@@ -10,18 +10,19 @@
   <p class="text-for-pc">Double click to add a location</p>
   <p class="text-for-mobile">On mobile: double tap (double click) to add a location</p>
 
-  <div class="form-style-tile">
-    <div class="top-left-curve-compensation"></div>
-    <div class="bottom-right-curve-compensation"></div>
-  </div>
-</section>
-<section class="location-map-form-container">
   <%# map container %>
   <section class="location-map-container"
     data-controller="location-map"
     data-location-map-markers-value="<%= @markers.to_json %>"
     data-location-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
     data-action="dblclick->location-form#openForm"></section>
+
+  <div class="form-style-tile">
+    <div class="top-left-curve-compensation"></div>
+    <div class="bottom-right-curve-compensation"></div>
+  </div>
+</section>
+<section class="location-map-form-container">
   <%# form container %>
   <section class="main-form location-create-form" id="location-create-form-container">
     <h2>Add your own activity and location</h2>

@@ -1,10 +1,11 @@
-.location-map-form-container {
-  @include flex-row();
-  justify-content: space-between;
-  align-items: center;
-}
+// .location-map-form-container {
+//   @include flex-row();
+//   justify-content: space-between;
+//   align-items: center;
+// }
 
 .location-map-container{
+  margin: 0 auto;
   max-width: 35rem;
   min-width: 12rem;
   height: 50vh;
@@ -15,6 +16,7 @@
 }
 
 .location-create-form {
+  margin: 0 auto;
   margin-top: 1rem;
   display: none;
   transition: all ease-in-out 0.3s;
@@ -24,14 +26,14 @@
 }
 
 @media (max-width: 800px) {
-  .location-map-form-container {
-    flex-direction: column;
-    justify-content: center;
-  }
+  // .location-map-form-container {
+  //   flex-direction: column;
+  //   justify-content: center;
+  // }
   .location-map-container {
-    width: 95vw;
+    width: 80%;
   }
   .location-create-form {
-    width: 95vw;
+    width: 100%;
   }
 }
