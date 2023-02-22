@@ -1,0 +1,39 @@
+.locations-intro-section {
+  background-color: $yellow-papatoo;
+  color: $blue-papatoo;
+  h2 {
+    color: $blue-papatoo;
+    font-family: $retro;
+    font-size: 3rem;
+  }
+  .top-right-style-tile {
+    width: 65%;
+    .top-left-curve-compensation {
+      &::before{
+        background-color: $yellow-papatoo;
+        box-shadow: 1px -1px 0px $yellow-papatoo;
+      }
+    }
+    .bottom-right-curve-compensation {
+      &::before {
+        background-color: $yellow-papatoo;
+        box-shadow: 1px -1px 0px $yellow-papatoo;
+      }
+    }
+  }
+  .form-style-tile {
+    width: 75%;
+    .top-left-curve-compensation {
+      &::before {
+        background-color: $yellow-papatoo;
+        box-shadow: 1px -1px 0px $yellow-papatoo;
+      }
+    }
+    .bottom-right-curve-compensation {
+      &::before {
+        background-color: $yellow-papatoo;
+        box-shadow: 1px -1px 0px $yellow-papatoo;
+      }
+    }
+  }
+}
