@@ -13,6 +13,11 @@
     font-family: $retro;
     -webkit-text-stroke: 0.1rem $light-green-papatoo;
   }
+  h2 {
+    font-size: 4rem;
+    color: rgba(0, 0, 0, 0);
+    font-family: $retro;
+  }
 }
 
 @media (max-width:700px) {

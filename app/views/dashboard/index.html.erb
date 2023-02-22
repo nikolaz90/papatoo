@@ -1,12 +1,27 @@
-<h1>Dashboard</h1>
-<p>Hi <%= current_user.username %><%= " : this is an admin account" if current_user.admin %></p>
-
-<p><%= link_to 'my articles', my_articles_path %></p>
-
-<p><%= link_to 'account settings', edit_user_registration_path %></p>
-
-<p><%= link_to 'convos', convos_path %></p>
-
-<% if policy(:admin).articles_for_validation? %>
-  <p><%= link_to 'articles for validation', articles_for_validation_path %></p>
-<% end %>
+<section class="dashboard-section green-bg-curvy-section main-form">
+  <div class="top-right-style-tile">
+    <div class="top-left-curve-compensation"></div>
+    <div class="bottom-right-curve-compensation"></div>
+  </div>
+  <h2>Hi <%= current_user.username %></h2>
+  <h2><%= "this is an admin account" if current_user.admin %></h2>
+  <article class="dashboard-main-menu">
+    <h3>welcome to your dashboard</h3>
+    <%= link_to my_articles_path do %>
+      <div class="dashbaord-menu-link-container"><p>articles</p>  <%= image_tag 'article.svg', class: 'svg-icon svg-article' %></div>
+    <% end %>
+    <%= link_to edit_user_registration_path do %>
+      <div class="dashbaord-menu-link-container"><p>account settings</p>  <%= image_tag 'article.svg', class: 'svg-icon svg-article' %></div>
+    <% end %>
+    <%= link_to convos_path do %>
+      <div class="dashbaord-menu-link-container"><p>convos</p>  <%= image_tag 'article.svg', class: 'svg-icon svg-article' %></div>
+    <% end %>
+    <% if policy(:admin).articles_for_validation? %>
+      <p><%= link_to 'articles for validation', articles_for_validation_path %></p>
+    <% end %>
+  </article>
+  <div class="form-style-tile">
+    <div class="top-left-curve-compensation"></div>
+    <div class="bottom-right-curve-compensation"></div>
+  </div>
+</section>

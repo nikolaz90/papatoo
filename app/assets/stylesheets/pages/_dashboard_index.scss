@@ -1,0 +1,22 @@
+.dashboard-section {
+  .dashboard-main-menu {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 0 auto;
+    max-width: 30rem;
+    .dashbaord-menu-link-container {
+      @include flex-row();
+      p {
+        margin: 0;
+      }
+      justify-content: center;
+      align-items: center;
+    }
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
