@@ -4,7 +4,7 @@
 }
 
 .svg-glasses {
-  transform: rotate(-18deg);
+  transform: rotate(-29deg);
   position: absolute;
   left: 4rem;
   top: 4rem;
@@ -12,6 +12,7 @@
 
 @media (max-width: 450px) {
   .svg-glasses {
+    transform: rotate(-29deg) scale(0.7);
     left: 2rem;
     top: 2rem;
   }
@@ -28,5 +29,20 @@
   .svg-flipflops {
     transform: rotate(29deg) scale(0.6);
     bottom: 1rem;
+  }
+}
+
+.svg-bbq {
+  position: absolute;
+  transform: rotate(-11deg);
+  left: 0;
+  top: 1rem;
+  height: 4rem;
+}
+
+@media (max-width: 450px) {
+  .svg-bbq {
+    left: -1rem;
+    transform: rotate(-11deg) scale(0.8);
   }
 }
