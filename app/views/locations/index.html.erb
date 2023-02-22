@@ -26,11 +26,11 @@
   <%# form container %>
   <section class="main-form location-create-form" id="location-create-form-container">
     <h2>Add your own activity and location</h2>
-    <%= simple_form_for @location do |form| %>
+    <%= simple_form_for @location, data: { controller: 'flatpickr' } do |form| %>
       <input class="form-control numeric float required" hidden type="number" step="any" name="location[long]" id="location_long">
       <input class="form-control numeric float required" hidden type="number" step="any" name="location[lat]" id="location_lat">
       <%= form.input :description, label: 'Description: (dog walking, park run...)' %>
-      <%= form.input :start_time, label: 'When:' %>
+      <%= form.input :start_time, label: 'When:', as: :string, input_html: { data: { flatpickr_target: "startTime" } } %>
       <%= form.input :duration, label: 'Duration in minutes:', input_html: { step: 30, min: 30, max: 1200 } %>
       <%= form.submit class: 'cta-btn-form' %>
     <% end %>
