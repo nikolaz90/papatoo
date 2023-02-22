@@ -20,6 +20,7 @@
     <%= render "shared/navbar" if controller_name != "spell_this" %>
     <%= render "shared/flashes" %>
     <main>
+    <%= link_to "<-back", :back unless current_page?(root_path) %>
       <%= yield %>
     </main>
 

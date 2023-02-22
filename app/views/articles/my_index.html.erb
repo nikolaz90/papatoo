@@ -1,11 +1,17 @@
-<%= link_to "back", :back %>
-<%= link_to "write", new_article_path %>
+<section class="my-article-index green-bg-curvy-section main-form">
 
-<h2>My articles index</h2>
-<p><small><%= @articles.any? ? "You have #{@articles.length} articles" : "You haven't written any articles" %></small></p>
+  <h2>My articles</h2>
+  <p><small><%= @articles.any? ? "You have #{@articles.length} articles" : "You haven't written any articles" %></small></p>
 
-<% @articles.each do |item| %>
-  <%= link_to article_path(item) do %>
-    <p><%= item.title %> - status : <%= item.status %></p>
+  <% @articles.each_with_index do |item, index| %>
+    <%= link_to article_path(item) do %>
+      <p><%= index + 1 %>) <%= item.title %> (<%= item.status %>)</p>
+    <% end %>
   <% end %>
-<% end %>
+  <br><br>
+  <%= link_to "write an article", new_article_path, class: 'cta-btn' %>
+  <div class="form-style-tile">
+    <div class="top-left-curve-compensation"></div>
+    <div class="bottom-right-curve-compensation"></div>
+  </div>
+</section>
