@@ -42,9 +42,7 @@ export default class extends Controller {
     document.getElementById('location-create-form-container').style.display = 'block';
     document.getElementById('location_long').value = coordinates.lng;
     document.getElementById('location_lat').value = coordinates.lat;
-    if(window.screen.width < 800) {
-      locationForm.scrollIntoView()
-    }
+    locationForm.scrollIntoView()
     // removes the previous markers (only on client side)
     for(let i = this.map._markers.length - 1; i >= 0; i--){
       this.map._markers[i].remove()
