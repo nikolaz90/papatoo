@@ -1,5 +1,6 @@
 .article-index-top-section {
   @include flex-row();
+  background-color: $broken-white-papatoo;
   justify-content: space-evenly;
 }
 
@@ -27,11 +28,15 @@
   justify-content: space-between;
   h2 {
     width: 23rem;
+    text-align: right;
+    color: $blue-papatoo;
     font-size: 2rem;
     font-weight: bold;
+    margin-right: 1rem;
   }
   p {
     width: 13rem;
+    text-align: left;
   }
 }
 
@@ -39,9 +44,11 @@
   .article-index-h2-container{
     h2 {
       width: 100%;
+      text-align: center;
     }
     p {
       width: 100%;
+      text-align: center;
     }
   }
 }
