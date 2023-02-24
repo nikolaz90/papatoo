@@ -1,6 +1,7 @@
 .article-index-card{
   @include button-basic();
-  @include light-web-bg();
+  // @include light-web-bg();
+  background-color: #619b8a47;
   margin: 1rem;
   padding: 1rem;
   width: 20rem;
@@ -13,14 +14,24 @@
   .article-index-card-number {
     position: absolute;
     right: 1rem;
-    border-radius: 50%;
     min-width: 2rem;
     height: 2rem;
-    padding: 0.1rem;
     text-align: center;
     font-weight: bold;
+    font-family: $curly;
+    font-size: 4rem;
   }
   &:hover {
     background-color: rgba(255, 255, 255, 1);
+    hr {
+      color: $yellow-papatoo;
+    }
+  }
+  hr {
+    margin: -0.5rem 0;
+    color: $light-green-papatoo;
+    border: 0;
+    border-top: 1px solid;
+    opacity: 1;
   }
 }
