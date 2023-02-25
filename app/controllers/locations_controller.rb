@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :get_coordinates_from_address]
   def index
     policy_scope(Location)
     @location = Location.new
@@ -19,6 +19,11 @@ class LocationsController < ApplicationController
     @location.user = current_user
     authorize @location
     redirect_to locations_path if @location.save
+  end
+
+  def get_coordinates_from_address
+    authorize Location
+    render json: Geocoder.search(params[:address]).first.coordinates
   end
 
   def destroy

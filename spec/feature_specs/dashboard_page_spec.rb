@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Dashboard rspec test', type: :feature do
+RSpec.describe 'Dashboard test', type: :feature do
   describe 'dashboard' do
     let(:user) { User.create(email: "article@test.com", password: "123456", username: "aloha_guy") }
 
@@ -12,7 +12,7 @@ RSpec.describe 'Dashboard rspec test', type: :feature do
     it 'is accessible to users that are signed in' do
       login_as(user)
       visit(dashboard_index_path)
-      expect(page).to have_content('Dashboard')
+      expect(page).to have_content('dashboard')
     end
   end
 end

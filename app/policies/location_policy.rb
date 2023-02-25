@@ -10,6 +10,10 @@ class LocationPolicy < ApplicationPolicy
   def destroy?
     user.present? && record.user == user
   end
+
+  def get_coordinates_from_address?
+    true
+  end
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve

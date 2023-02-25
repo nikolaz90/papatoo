@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   # locations
   resources :locations, only: %i[index create destroy]
+  get 'get_coordinates_from_address', to: "locations#get_coordinates_from_address"
 
   # convos
   resources :convos, only: %i[index create] do
