@@ -51,3 +51,20 @@
   height: 1rem;
   width: 3rem;
 }
+
+.svg-retro-pc {
+  position: absolute;
+  transform: rotate(-11deg);
+  left: 0;
+  top: 1rem;
+  height: 4rem;
+  opacity: 0.5;
+}
+
+.svg-retro-controller {
+  position: absolute;
+  bottom: 4rem;
+  right: 1rem;
+  transform: rotate(29deg);
+  opacity: 0.5;
+}
