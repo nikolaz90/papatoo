@@ -68,3 +68,12 @@
   transform: rotate(29deg);
   opacity: 0.5;
 }
+
+@media (max-width: 450px) {
+  .svg-retro-controller {
+    transform: rotate(29deg) scale(0.8);
+  }
+  .svg-retro-pc {
+    transform: rotate(-11deg) scale(0.8);
+  }
+}
