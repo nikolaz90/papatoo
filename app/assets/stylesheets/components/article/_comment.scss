@@ -1,4 +1,11 @@
 .leave-comment-form {
   max-width: 20rem;
   background-color: $light-gray;
+  form {
+    input[type='text'] {
+      background-color: $light-gray;
+      border: 1px solid $blue-papatoo;
+      height: 3rem;
+    }
+  }
 }
