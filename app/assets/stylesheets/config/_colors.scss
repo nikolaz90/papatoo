@@ -1,11 +1,13 @@
 // Define variables for your color scheme
+// main color variables are below
+$color-one-papatoo: #31E1F7;
+$color-two-papatoo: #400D51;
+$color-three-papatoo: #D800A6;
+$color-four-papatoo: #FF7777;
 
-// $light-green-papatoo: #FDFCDC;
-// $mid-green-papatoo: rgb(71, 140, 71);
-// $dark-green-papatoo: rgb(22, 67, 22);
+$bg-color-papatoo: white;
 
-// try this palette https://coolors.co/233d4d-fe7f2d-fcca46-a1c181-619b8a
-
+// supplementary colors
 $blue-papatoo: #233d4d;
 $orange-papatoo: #fe7f2d;
 $yellow-papatoo: #fcca46;
@@ -17,7 +19,7 @@ $broken-white-papatoo: rgb(207, 207, 207);
 
 $red-papatoo: rgb(145, 37, 37);
 
-// For example:
+// bootstrapped colors that came with boiler plate:
 $red: #FD1015;
 $blue: #0D6EFD;
 $yellow: #FFC65A;

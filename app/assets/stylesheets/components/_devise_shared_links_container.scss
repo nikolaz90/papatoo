@@ -1,9 +1,9 @@
 .devise-shared-links-container {
   a {
-    color: $light-green-papatoo;
+    color: $color-one-papatoo;
     transition: all ease-in-out 0.3s;
     &:hover {
-      color: $dark-green-papatoo;
+      color: $color-two-papatoo;
     }
   }
   position: relative;
@@ -32,8 +32,8 @@
         display: inline-block;
         height: 1.5rem;
         width: 1rem;
-        box-shadow: 1px -1px 0px $blue-papatoo;
-        background-color: $blue-papatoo;
+        box-shadow: 1px -1px 0px $bg-color-papatoo;
+        background-color: $bg-color-papatoo;
       }
     }
   }

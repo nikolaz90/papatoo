@@ -19,6 +19,6 @@
 .cta-btn-form {
   @include cta-btn();
   &:hover {
-    background-color: $light-green-papatoo;
+    background-color: $color-one-papatoo;
   }
 }

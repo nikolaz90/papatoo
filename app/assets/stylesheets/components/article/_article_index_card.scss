@@ -1,7 +1,6 @@
 .article-index-card{
   @include button-basic();
-  // @include light-web-bg();
-  background-color: #619b8a47;
+  // background-color: #619b8a47;
   margin: 1rem;
   padding: 1rem;
   width: 20rem;
@@ -10,7 +9,7 @@
   border-radius: 1rem;
   h5 {
     font-weight: bold;
-    color: $light-green-papatoo;
+    color: $color-two-papatoo;
   }
   .article-index-card-number {
     position: absolute;
@@ -30,7 +29,7 @@
   }
   hr {
     margin: -0.5rem 0;
-    color: $light-green-papatoo;
+    color: $color-two-papatoo;
     border: 0;
     border-top: 1px solid;
     opacity: 1;

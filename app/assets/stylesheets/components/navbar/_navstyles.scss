@@ -1,22 +1,23 @@
 .papatoo-navbar {
   @include flex-row();
+  @include faded-box-shadow();
   align-items: center;
   justify-content: space-between;
-  background-color: $light-green-papatoo;
+  background-color: $color-one-papatoo;
   border-radius: 1rem;
   padding: 1rem;
   .nav-title {
-    color: $blue-papatoo;
+    color: $color-two-papatoo;
     font-family: $retro;
     font-weight: bold;
     font-size: 4rem;
   }
   a {
     transition: all ease-in-out 0.3s;
-    color: $blue-papatoo;
+    color: $color-two-papatoo;
     padding: 0 0.4rem;
     &:hover {
-      color: $yellow-papatoo;
+      color: $color-four-papatoo;
     }
   }
 }

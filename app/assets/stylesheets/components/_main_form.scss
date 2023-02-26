@@ -1,9 +1,9 @@
 .main-form {
   h2 {
-    color: $light-green-papatoo;
+    color: $color-one-papatoo;
   }
   position: relative;
-  background-color: $dark-green-papatoo;
+  background-color: $color-two-papatoo;
   padding: 4rem 1rem 6rem 1rem;
   border-radius: 1.1rem;
   text-align: center;
@@ -13,7 +13,7 @@
     text-decoration: none;
   }
   label {
-    color: $light-green-papatoo;
+    color: $color-one-papatoo;
   }
 
   input[type="text"], input[type="email"], input[type="password"], input[type="number"], select, textarea {
@@ -23,8 +23,8 @@
     min-width: 15rem;
     border: none;
     border-radius: 2rem;
-    color: $light-green-papatoo;
-    background-color: $dark-green-papatoo;
+    color: $color-one-papatoo;
+    background-color: $color-two-papatoo;
     border: 1px solid white;
     &:focus {
       background-color: white;
