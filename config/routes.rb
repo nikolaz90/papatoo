@@ -23,6 +23,12 @@ Rails.application.routes.draw do
   resources :spell_this, only: %i[index]
   resources :game_scores, only: %i[create]
 
+  # -------------------------------------------------------------
+  # portfolio article
+  get 'portfolio_article/index'
+  get 'portfolio_article/new'
+  resources :portfolio_article, only: %i[index new]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
