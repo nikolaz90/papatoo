@@ -1,0 +1,2 @@
+class PotfolioArticle < ApplicationRecord
+end
