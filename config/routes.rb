@@ -26,6 +26,12 @@ Rails.application.routes.draw do
   # portfolio article
   resources :portfolio_articles, only: %i[index new create destroy]
 
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :portfolio_articles, only: %i[index]
+    end
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
