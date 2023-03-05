@@ -17,7 +17,10 @@ a {
   }
 }
 
-
+.border-bottom {
+  border-bottom: 1px solid grey;
+  margin-bottom: 1rem;
+}
 // conditionally display text on screen width
 .text-for-mobile {
   display: none;

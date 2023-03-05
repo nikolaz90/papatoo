@@ -1,9 +1,13 @@
-<h1>Portfolio Articles</h1>
-<% @portfolio_articles.each do |item| %>
-  <p><strong> title: </strong><%= item.title %></p>
-  <p><strong> description: </strong><%= item.description %></p>
-  <p><strong> hosted at: </strong><%= item.url %></p>
-  <%= link_to "delete", portfolio_article_path(item), data: {turbo_method: :delete}%>
-<% end %>
-<br>
-<%= link_to 'add a new portfolio article', new_portfolio_article_path %>
+<section class='portfolio-article-section green-bg-curvy-section main-form'>
+  <h2>Portfolio Articles</h2>
+  <% @portfolio_articles.each do |item| %>
+    <article class="border-bottom">
+      <p><strong> title: </strong><%= item.title %></p>
+      <p><strong> description: </strong><%= item.description %></p>
+      <p><strong> hosted at: </strong><%= item.url %></p>
+      <%= link_to "delete", portfolio_article_path(item), data: {turbo_method: :delete}%>
+    </article>
+  <% end %>
+  <br>
+  <%= link_to 'add a new portfolio article', new_portfolio_article_path, class: 'cta-btn' %>
+</section>
