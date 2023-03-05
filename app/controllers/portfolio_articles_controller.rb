@@ -1,6 +1,7 @@
 class PortfolioArticlesController < ApplicationController
   def index
     @portfolio_articles = policy_scope(PortfolioArticle)
+    authorize @portfolio_articles
   end
 
   def new
