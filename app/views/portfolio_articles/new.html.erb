@@ -1,0 +1,8 @@
+<h1>PortfolioArticle#new</h1>
+
+<%= simple_form_for @portfolio_article do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :url %>
+  <%= f.submit class: 'cta-btn-form' %>
+<% end %>

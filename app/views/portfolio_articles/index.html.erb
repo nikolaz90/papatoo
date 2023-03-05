@@ -1,0 +1,9 @@
+<h1>Portfolio Articles</h1>
+<% @portfolio_articles.each do |item| %>
+  <p><strong> title: </strong><%= item.title %></p>
+  <p><strong> description: </strong><%= item.description %></p>
+  <p><strong> hosted at: </strong><%= item.url %></p>
+  <%= link_to "delete", portfolio_article_path(item), data: {turbo_method: :delete}%>
+<% end %>
+<br>
+<%= link_to 'add a new portfolio article', new_portfolio_article_path %>
