@@ -8,19 +8,19 @@
   padding-top: 5rem;
   color: $color-two-papatoo;
   margin-top: 2rem;
-  background-color: $color-four-papatoo;
+  background-color: $color-one-papatoo;
   .top-right-style-tile {
     width: 70%;
     .top-left-curve-compensation {
       &::before{
-        background-color: $color-four-papatoo;
-        box-shadow: 1px -1px 0px $color-four-papatoo;
+        background-color: $color-one-papatoo;
+        box-shadow: 1px -1px 0px $color-one-papatoo;
       }
     }
     .bottom-right-curve-compensation {
       &::before {
-        background-color: $color-four-papatoo;
-        box-shadow: 1px -1px 0px $color-four-papatoo;
+        background-color: $color-one-papatoo;
+        box-shadow: 1px -1px 0px $color-one-papatoo;
       }
     }
   }
@@ -28,15 +28,30 @@
     width: 75%;
     .top-left-curve-compensation {
       &::before {
-        background-color: $color-four-papatoo;
-        box-shadow: 1px -1px 0px $color-four-papatoo;
+        background-color: $color-one-papatoo;
+        box-shadow: 1px -1px 0px $color-one-papatoo;
       }
     }
     .bottom-right-curve-compensation {
       &::before {
-        background-color: $color-four-papatoo;
-        box-shadow: 1px -1px 0px $color-four-papatoo;
+        background-color: $color-one-papatoo;
+        box-shadow: 1px -1px 0px $color-one-papatoo;
       }
     }
+  }
+}
+
+.side-note-section {
+  margin-top: 3rem;
+  color: $color-one-papatoo;
+  a {
+    color: $color-one-papatoo;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+      color: $color-four-papatoo;
+    }
+  }
+  .top-right-style-tile {
+    width: 28%;
   }
 }

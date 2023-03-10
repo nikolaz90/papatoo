@@ -1,14 +1,21 @@
-<h1>Convos</h1>
-<% @convos.each do |item| %>
-  <%= link_to convo_messages_path(item) do %>
-    <% if item.correspondant_has_deleted_account %>
-      'This correspondant has deleted their account'
-    <% else %>
-      <% if current_user.username == item.receiver.username %>
-        <p><%= item.sender.username %></p>
+<section class="convos-section green-bg-curvy-section main-form">
+  <div class="top-right-style-tile">
+    <div class="top-left-curve-compensation"></div>
+    <div class="bottom-right-curve-compensation"></div>
+  </div>
+  <h2>Convos</h2>
+  <p>you have open <%= @convos.length %> conversations</p>
+  <% @convos.each do |item| %>
+    <%= link_to convo_messages_path(item) do %>
+      <% if item.correspondant_has_deleted_account %>
+        <p>'This correspondant has deleted their account'</p>
       <% else %>
-        <p><%= item.receiver.username %></p>
+        <% if current_user.username == item.receiver.username %>
+          <p><%= item.sender.username %></p>
+        <% else %>
+          <p><%= item.receiver.username %></p>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
-<% end %>
+</section>

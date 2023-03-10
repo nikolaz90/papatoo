@@ -1,7 +1,8 @@
 .std-msg {
   padding: 1rem;
   margin-bottom: 0.5rem;
-  background-color: $yellow;
+  background-color: $color-one-papatoo;
+  color: $color-two-papatoo;
   text-align: left;
   border-radius: 1rem 1rem 1rem 0;
 }
@@ -11,4 +12,8 @@
   color: $color-one-papatoo;
   text-align: right;
   border-radius: 1rem 1rem 0 1rem;
+}
+
+.send-message-form {
+  background-color: rgba(255, 255, 255, 0);
 }

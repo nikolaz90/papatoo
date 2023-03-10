@@ -1,0 +1,9 @@
+.convos-section {
+  a {
+    color: $color-one-papatoo;
+    transition: all ease-in-out 0.3s;
+    &:hover {
+      color: $color-four-papatoo;
+    }
+  }
+}

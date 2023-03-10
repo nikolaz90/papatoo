@@ -1,4 +1,3 @@
-<h1>Messages</h1>
 <section data-controller='messages'
          data-messages-convo-value="<%= @convo.id %>"
          data-messages-user-name-value="<%= current_user.username %>">
@@ -8,10 +7,12 @@
     <% end %>
   </section>
 
-  <%= simple_form_for [@convo, @message],
-      html: { data: { action: "turbo:submit-end->messages#afterSend" } },
-      required: true do |form| %>
-    <%= form.input :content %>
-    <%= form.submit 'send' %>
-  <% end %>
+  <section class="main-form send-message-form">
+    <%= simple_form_for [@convo, @message],
+        html: { data: { action: "turbo:submit-end->messages#afterSend" } },
+        required: true do |form| %>
+      <%= form.input :content, label: false %>
+      <%= form.submit 'send', class: "cta-btn" %>
+    <% end %>
+  </section>
 </section>
