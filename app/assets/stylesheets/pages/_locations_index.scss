@@ -1,8 +1,8 @@
 .locations-intro-section {
-  background-color: $yellow-papatoo;
-  color: $color-two-papatoo;
+  background-color: $color-two-papatoo;
+  color: $color-one-papatoo;
   h2 {
-    color: $color-two-papatoo;
+    color: $color-one-papatoo;
     font-family: $retro;
     font-size: 3rem;
   }
@@ -10,14 +10,14 @@
     width: 65%;
     .top-left-curve-compensation {
       &::before{
-        background-color: $yellow-papatoo;
-        box-shadow: 1px -1px 0px $yellow-papatoo;
+        background-color: $color-two-papatoo;
+        box-shadow: 1px -1px 0px $color-two-papatoo;
       }
     }
     .bottom-right-curve-compensation {
       &::before {
-        background-color: $yellow-papatoo;
-        box-shadow: 1px -1px 0px $yellow-papatoo;
+        background-color: $color-two-papatoo;
+        box-shadow: 1px -1px 0px $color-two-papatoo;
       }
     }
   }
@@ -25,14 +25,14 @@
     width: 75%;
     .top-left-curve-compensation {
       &::before {
-        background-color: $yellow-papatoo;
-        box-shadow: 1px -1px 0px $yellow-papatoo;
+        background-color: $color-two-papatoo;
+        box-shadow: 1px -1px 0px $color-two-papatoo;
       }
     }
     .bottom-right-curve-compensation {
       &::before {
-        background-color: $yellow-papatoo;
-        box-shadow: 1px -1px 0px $yellow-papatoo;
+        background-color: $color-two-papatoo;
+        box-shadow: 1px -1px 0px $color-two-papatoo;
       }
     }
   }

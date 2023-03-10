@@ -1,19 +1,20 @@
 .devise-shared-links-container {
+  color: $color-one-papatoo;
   a {
     color: $color-one-papatoo;
     transition: all ease-in-out 0.3s;
     &:hover {
-      color: $color-two-papatoo;
+      color: $color-one-papatoo;
     }
   }
   position: relative;
   margin-top: 1rem;
-  background-color: $yellow-papatoo;
+  background-color: $color-two-papatoo;
   border-radius: 0 1rem 1rem 1rem;
   padding: 1rem;
   .top-left-style-tile {
     position: absolute;
-    background-color: $yellow-papatoo;
+    background-color: $color-two-papatoo;
     width: 30%;
     // height: 69%;
     height: 3.45rem;
@@ -23,7 +24,7 @@
     .bottom-right-curve-compensation {
       width: fit-content;
       position: absolute;
-      background-color: $yellow-papatoo;
+      background-color: $color-two-papatoo;
       bottom: -0.28rem;
       right: -1rem;
       &::before {

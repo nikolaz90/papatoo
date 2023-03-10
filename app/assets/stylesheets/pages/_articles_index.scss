@@ -1,6 +1,6 @@
 .article-index-top-section {
   @include flex-row();
-  background-color: $broken-white-papatoo;
+  background-color: $color-two-papatoo;
   justify-content: space-evenly;
 }
 
@@ -26,17 +26,19 @@
   width: 100%;
   max-width: 38rem;
   justify-content: space-between;
+  align-items: center;
   h2 {
     width: 23rem;
     text-align: right;
-    color: $color-two-papatoo;
     font-size: 2rem;
     font-weight: bold;
     margin-right: 1rem;
+    color: $color-one-papatoo;
   }
   p {
     width: 13rem;
     text-align: left;
+    color: white;
   }
 }
 

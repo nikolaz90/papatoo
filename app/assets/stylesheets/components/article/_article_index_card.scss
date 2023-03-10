@@ -1,12 +1,12 @@
 .article-index-card{
   @include button-basic();
-  // background-color: #619b8a47;
   margin: 1rem;
   padding: 1rem;
   width: 20rem;
   height: 8rem;
   position: relative;
   border-radius: 1rem;
+  background-color: $color-one-papatoo;
   h5 {
     font-weight: bold;
     color: $color-two-papatoo;
@@ -24,7 +24,7 @@
   &:hover {
     background-color: rgba(255, 255, 255, 1);
     hr {
-      color: $yellow-papatoo;
+      color: $color-three-papatoo;
     }
   }
   hr {
