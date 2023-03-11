@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   resources :spell_this, only: %i[index]
   resources :game_scores, only: %i[create]
+  ## songs
+  resources :songs, only: %i[index new create show]
 
   # portfolio article
   resources :portfolio_articles, only: %i[index new create destroy]

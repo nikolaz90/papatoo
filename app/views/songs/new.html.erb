@@ -1,0 +1,10 @@
+<h1>Songs#new</h1>
+<p>Find me in app/views/songs/new.html.erb</p>
+
+<%= simple_form_for @song do |f| %>
+  <%= f.input :title %>
+  <%= f.input :artist %>
+  <%= f.input :description %>
+  <%= f.input :song_file, as: :file %>
+  <%= f.submit 'save' %>
+<% end %>
