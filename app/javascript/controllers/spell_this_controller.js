@@ -88,7 +88,7 @@ export default class extends Controller {
 
   stopGameWinner(){
     this.isWinner = true
-    const score = Number(this.wordcountTarget.innerText) * (9999 - Number(this.timerTarget.innerText));
+    const score = Number(this.wordcountTarget.innerText) * Number(this.timerTarget.innerText);
     this.spellwordTarget.innerHTML = `winner winner winner <br/> ------ <br/> Spell this : <br/> YOU'RE AWESOME <br/> ------ <br/> final score : ${score} <br/> ------ <br/> winner winner winner`;
     this.counterAnswerContainerTarget.style.display = "none";
     this.submitScoreTarget.style.display = "block";
