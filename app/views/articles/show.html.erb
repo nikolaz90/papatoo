@@ -13,7 +13,7 @@
     <% end %>
   </article>
   <section class="article-comments-section">
-    <% if @article.accepts_comments %>
+    <% if @article.accepts_comments && @article.status == 'published' %>
       <%= render partial: 'comments/index', locals: { comments: @article.comments } %>
       <%= render 'comments/new' %>
     <% end %>
