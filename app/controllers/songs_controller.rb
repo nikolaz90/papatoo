@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
   def index
     @songs = policy_scope(Song)
+    authorize @songs
   end
 
   def new

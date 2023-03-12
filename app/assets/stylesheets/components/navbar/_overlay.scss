@@ -1,6 +1,16 @@
 .overlay-menu{
   display: none;
   transition: all 2s ease-in-out;
+  background-color: $color-one-papatoo;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  font-size: 2rem;
+  a{
+    color: $color-two-papatoo;
+    margin-top: 1rem;
+  }
   .nav-links-container-overlay {
     @include flex-col();
     justify-content: start;
@@ -8,27 +18,17 @@
 }
 
 .overlay-activated{
-  display: flex;
-  font-size: 2rem;
+  display: block;
   animation: fade-in 0.4s;
-  a{
-    color: $color-one-papatoo;
-    margin-top: 1rem;
-  }
 }
 
 @keyframes fade-in {
   0% {
-      height: 0rem;
+      height: fit-content;
       opacity: 0;
   }
 
-  90% {
-    opacity: 0;
-  }
-
   100% {
-      height: fit-content;
       opacity: 1;
   }
 }

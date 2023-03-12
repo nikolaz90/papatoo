@@ -1,6 +1,6 @@
 class SongPolicy < ApplicationPolicy
   def index?
-    true
+    user.admin
   end
 
   def new?
