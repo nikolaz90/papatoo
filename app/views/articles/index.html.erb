@@ -31,6 +31,7 @@
     <%= link_to article_path(item), class:"article-index-card" do %>
       <h4 class="article-index-card-number" style="color: rgba(<%= rand(50..255) %>,<%= rand(50..255) %>,<%= rand(50..255) %>, 0.4)"><%= index + 1 %></h4>
       <h5><%= item.title %></h5>
+      <img class="avatar-article-circle" src="https://picsum.photos/200/300" alt="random photo generator">
       <p><small>by: <%= item.user == current_user ? "you wrote this article!" : item.user.username %></small></p>
       <p><%= item.content.truncate(35) %></p>
       <hr>

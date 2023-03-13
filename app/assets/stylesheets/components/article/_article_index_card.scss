@@ -5,24 +5,33 @@
   width: 20rem;
   height: 8rem;
   position: relative;
-  border-radius: 1rem;
-  background-color: $color-one-papatoo;
+  border-radius: 0.3rem;
+  border: 1px black solid;
   h5 {
     font-weight: bold;
     color: $color-two-papatoo;
   }
   .article-index-card-number {
     position: absolute;
-    right: 1rem;
+    right: 0;
+    bottom: 1rem;
     min-width: 2rem;
     height: 2rem;
     text-align: center;
     font-weight: bold;
     font-family: $curly;
-    font-size: 4rem;
+    font-size: 2rem;
+  }
+  .avatar-article-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
   }
   &:hover {
-    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0;
     hr {
       color: $color-three-papatoo;
     }
