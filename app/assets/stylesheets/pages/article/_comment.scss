@@ -1,0 +1,37 @@
+.leave-comment-form {
+  max-width: 40rem;
+  background-color: $light-gray;
+  padding: 1rem;
+  border-radius: $subtle-border-radius;
+  form {
+    @include flex-row();
+    align-items: center;
+    div {
+      width: 75%;
+    }
+    input[type='text'] {
+      background-color: $light-gray;
+      border: 1px solid $color-two-papatoo;
+      height: 3rem;
+      border: none;
+      color: $color-one-papatoo;
+      border: 1px solid black;
+      &:focus {
+        color: black;
+        box-shadow: none;
+      }
+    }
+    input[type="submit"] {
+      height: 3rem;
+    }
+  }
+}
+
+@media (max-width:380px) {
+  .leave-comment-form {
+    form {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

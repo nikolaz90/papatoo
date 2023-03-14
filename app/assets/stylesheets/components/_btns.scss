@@ -22,3 +22,22 @@
     background-color: $color-one-papatoo;
   }
 }
+.cta-btn-comment {
+  padding: 0 1rem;
+  transition: all ease-in-out 0.3s;
+  margin-top: 1rem;
+  background-color: $yellow-papatoo;
+  &:hover {
+    background-color: $color-one-papatoo;
+  }
+}
+
+.skinny-btn {
+  padding: 0 1rem;
+  transition: all ease-in-out 0.3s;
+  background-color: $yellow-papatoo;
+  border-radius: $subtle-border-radius;
+  &:hover {
+    background-color: $color-one-papatoo;
+  }
+}

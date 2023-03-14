@@ -1,0 +1,61 @@
+.std-msg {
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  background-color: $color-one-papatoo;
+  color: $color-two-papatoo;
+  text-align: left;
+  border-radius: 0.3rem 0.3rem 0.3rem 0;
+}
+
+.my-msg {
+  background-color: $color-two-papatoo;
+  color: $color-one-papatoo;
+  text-align: right;
+  border-radius: 0.3rem 0.3rem 0 0.3rem;
+}
+
+.messages-container {
+  padding: 0.5rem;
+  max-height: 50vh;
+  min-height: 5rem;
+  overflow: scroll;
+  border-radius: $subtle-border-radius;
+  border: 1px black solid;
+  margin-bottom: 1rem;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.send-message-form {
+  height: 4rem;
+  border: 1px black solid;
+  border-radius: $subtle-border-radius;
+  form {
+    @include flex-row();
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  input[type="text"] {
+    border: none;
+    &:focus {
+      border: none;
+      box-shadow: none;
+    }
+  }
+  input[type="submit"] {
+    margin-bottom: 1rem;
+  }
+  input[type="text"], input[type="submit"] {
+    height: 100%;
+  }
+  div {
+    width: 75%;
+    height: 100%;
+  }
+}

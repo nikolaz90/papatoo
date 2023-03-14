@@ -1,7 +1,7 @@
-<section class="main-form leave-comment-form">
+<section class="leave-comment-form">
   <h3>Leave a comment</h3>
   <%= simple_form_for [@article, @comment] do |form| %>
     <%= form.input :content, label: 'short comments only' %>
-    <%= form.submit 'comment', class: 'cta-btn-form' %>
+    <%= form.submit 'comment', class: 'cta-btn-comment' %>
   <% end %>
 </section>

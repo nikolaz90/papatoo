@@ -1,18 +1,18 @@
 <section data-controller='messages'
          data-messages-convo-value="<%= @convo.id %>"
          data-messages-user-name-value="<%= current_user.username %>">
-  <section data-messages-target="container">
+  <section data-messages-target="container" class="messages-container">
     <% @messages.each do |item| %>
       <%= render partial: 'message', locals: { message: item } %>
     <% end %>
   </section>
 
-  <section class="main-form send-message-form">
+  <section class="send-message-form">
     <%= simple_form_for [@convo, @message],
         html: { data: { action: "turbo:submit-end->messages#afterSend" } },
         required: true do |form| %>
       <%= form.input :content, label: false %>
-      <%= form.submit 'send', class: "cta-btn" %>
+      <%= form.submit 'send', class: "skinny-btn" %>
     <% end %>
   </section>
 </section>

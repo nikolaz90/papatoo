@@ -12,9 +12,11 @@
       <p>Thanks for reading.</p>
     <% end %>
   </article>
+  <hr>
   <section class="article-comments-section">
     <% if @article.accepts_comments && @article.status == 'published' %>
       <%= render partial: 'comments/index', locals: { comments: @article.comments } %>
+      <hr>
       <%= render 'comments/new' %>
     <% end %>
   </section>

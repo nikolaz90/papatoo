@@ -15,6 +15,8 @@ export default class extends Controller {
     setInterval(() => {
       this.fetchMsgsFromServer()
     }, 5000);
+    this.containerTarget.scrollTo(0, this.containerTarget.scrollHeight);
+    window.scrollTo(0, document.body.scrollHeight);
   }
 
   fetchMsgsFromServer() {
