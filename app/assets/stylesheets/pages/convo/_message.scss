@@ -5,6 +5,8 @@
   color: $color-two-papatoo;
   text-align: left;
   border-radius: 0.3rem 0.3rem 0.3rem 0;
+  width: fit-content;
+  margin: 0 auto 1rem 0;
 }
 
 .my-msg {
@@ -12,6 +14,8 @@
   color: $color-one-papatoo;
   text-align: right;
   border-radius: 0.3rem 0.3rem 0 0.3rem;
+  justify-self: flex-end;
+  margin: 0 0 1rem auto;
 }
 
 .messages-container {

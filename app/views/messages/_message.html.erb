@@ -1,4 +1,4 @@
 <article class="<%= 'my-msg' if message.user == current_user %> std-msg" id="<%= message.user.username %>-msg-<%= message.id %>">
-  <h5><%= message.user.username %></h5>
+  <p><small><%= message.user.username %></small></p>
   <p><%= message.content %></p>
 </article>
